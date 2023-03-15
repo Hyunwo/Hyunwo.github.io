@@ -105,14 +105,14 @@ analytics:
 # Site Author
 author:
   name             : "Hyeonu Jeong"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/avatar.jpg"
   bio              : "I am an **amazing** person."
   location         : "Republic of Korea"
-  email            :
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "jdkwbs@naver.com"
+      url: mailto:jdkwbs@naver.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"

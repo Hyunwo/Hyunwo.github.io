@@ -16,7 +16,7 @@ toc: true
 - 적은 리소스를 사용하면서 로그를 파싱하고 전송하는데 특화되어 있다.
 - 규칙을 태그방식으로 정하기 때문에 사용성이 직관적이다.
     
-    > <match logtype.error> type ... </match>
+    > <match> logtype.error> type ... </match>
     > 
 
 ## OpenSearch(ElasticSearch)

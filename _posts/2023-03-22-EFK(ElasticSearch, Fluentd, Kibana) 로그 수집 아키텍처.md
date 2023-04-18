@@ -1,5 +1,5 @@
 ---
-title: "EFK(ElasticSearch, Fluentd, Kibana) 로그 수집 아키텍처"
+title: "EFK(ElasticSearch, Fluentd, Kibana) 로그 수집"
 categories:
 - EFK
 last_modified_at: 2023-04-18T23:10:00+09:00
@@ -358,6 +358,8 @@ Open Dashboard를 실행한다. 실행 전 Opensearch도 실행되고 있어야 
 $your_ec2_public_dnsname:5601 로 접속해서 다음과 같은 웹이 나오면 잘 연동된 것이다.
 
 <center><img src="https://user-images.githubusercontent.com/75519996/232807236-f3aaf739-443d-44bf-aa54-53c64e5df6ab.png" width="100%" height="50%" style="margin-top: 20px; margin-bottom: 20px;"></center>
+
+만약 화면이 안 나온다면 Security-Groups 설정이 안 되어있을 가능성이 있다. Opensearch에서 Open Dashboard로 통신하기 위해 Inbound Rules에서 TCP프로토콜로 5601포트를 Anywhere로 지정하여 추가해 준다.
 
 좌측 상단에 리스트 버튼을 눌러 Management - Stack Management로 접속한다. Index Patterns를 클릭하고 Index name을 검색하면 생성한 Index가 조회된다.
 

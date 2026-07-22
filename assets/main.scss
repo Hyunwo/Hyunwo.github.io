@@ -1,0 +1,145 @@
+---
+# 이 front matter가 있어야 Jekyll이 이 파일을 SCSS로 처리함. 절대 지우지 말 것.
+---
+
+@import "minima";
+
+/* ---------- 한글 웹폰트 (Pretendard) ---------- */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+:root {
+  --accent: #2f6690;
+  --accent-dark: #1d4a6b;
+  --bg-soft: #f5f8fb;
+}
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #24292f;
+}
+
+/* 본문 폭 좁혀서 가독성 개선 */
+.page-content .wrapper,
+.site-header .wrapper,
+.site-footer .wrapper {
+  max-width: 800px;
+}
+
+/* 헤더 영역 */
+.site-header {
+  border-top: 4px solid var(--accent);
+  border-bottom: 1px solid #eaeaea;
+}
+
+.site-title,
+.site-title:visited {
+  font-weight: 700;
+  color: var(--accent-dark) !important;
+}
+
+/* 글 제목 */
+.post-title,
+h1 {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+h2 {
+  margin-top: 2.2em;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid var(--bg-soft);
+  color: var(--accent-dark);
+}
+
+h3 {
+  color: var(--accent-dark);
+}
+
+/* 링크 색상 포인트 */
+a {
+  color: var(--accent);
+}
+a:hover {
+  color: var(--accent-dark);
+}
+
+/* 표 스타일 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.92em;
+}
+
+table th {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+table tr:nth-child(even) {
+  background: var(--bg-soft);
+}
+
+/* 코드 블록 */
+pre,
+code {
+  font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+  border-radius: 6px;
+}
+
+pre {
+  background: #1e1e1e !important;
+  color: #e6e6e6;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+code {
+  background: var(--bg-soft);
+  padding: 2px 6px;
+  color: #b8290f;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+/* 인용문 */
+blockquote {
+  border-left: 4px solid var(--accent);
+  background: var(--bg-soft);
+  padding: 0.6em 1.2em;
+  color: #444;
+}
+
+/* 이미지 */
+.post-content img {
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  margin: 1.2em 0;
+}
+
+/* 날짜/메타 정보 톤 다운 */
+.post-meta {
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* 홈 화면 글 목록 카드처럼 보이게 */
+.post-list li {
+  padding: 1em 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.post-list h3 a {
+  font-weight: 700;
+}

@@ -1,0 +1,22 @@
+title: 정현우 | Cloud Infra Log
+description: "쿠버네티스, AWS, DevOps 학습 기록"
+url: "https://hyunwo.github.io"
+
+# 테마 (GitHub Pages에서 바로 지원하는 안전한 기본 테마)
+theme: jekyll-theme-minimal
+
+# 마크다운 처리 엔진 (GitHub Pages 기본값, 명시해두는 게 안전)
+markdown: kramdown
+
+# 퍼머링크 형식: /2026/07/22/vm-vs-container/ 형태로 생성
+permalink: /:year/:month/:day/:title/
+
+# 홈 화면에 보여줄 글 개수
+paginate: 10
+paginate_path: "/page:num/"
+
+# 목차(TOC) 등에서 제외할 파일/폴더
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -2,8 +2,8 @@ title: 정현우 | Cloud Infra Log
 description: "쿠버네티스, AWS, DevOps 학습 기록"
 url: "https://hyunwo.github.io"
 
-# 테마 (GitHub Pages에서 바로 지원하는 안전한 기본 테마)
-theme: jekyll-theme-minimal
+# 테마 (Jekyll 기본 블로그 테마, 홈 화면에 글 목록을 자동으로 보여줌)
+theme: minima
 
 # 마크다운 처리 엔진 (GitHub Pages 기본값, 명시해두는 게 안전)
 markdown: kramdown

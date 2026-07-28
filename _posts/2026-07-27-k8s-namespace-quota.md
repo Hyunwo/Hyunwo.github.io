@@ -63,6 +63,21 @@ metadata:
   name: team-a
 ```
 
+### Namespace가 분리해주는 것과 안 해주는 것
+
+Namespace는 "다 막아주는" 개념이 아니다. 뭐가 분리되고 뭐가 안 되는지 명확히 구분해둘 필요가 있다.
+
+**분리되는 것**
+- 라벨-셀렉터 연결: Pod를 다른 Namespace로 옮기면 같은 라벨이어도 Service와 연결이 끊긴다
+- 오브젝트 이름: 같은 Namespace 안에서 같은 이름의 Pod를 또 만들면 에러가 난다
+
+**분리 안 되는 것 (그래서 주의해야 하는 것)**
+- **Pod IP 직접 접근**: 다른 Namespace여도 Pod IP로 직접 접근하면 그냥 연결된다. Namespace가 IP 트래픽 자체를 막아주진 않는다
+- **NodePort**: 30000~32767번 포트 범위는 클러스터 전체가 공유하는 자원이라 Namespace로 나뉘지 않는다
+- **hostPath 볼륨**: 특정 Node의 실제 경로를 그대로 마운트하는 방식이라, 같은 Node 위에 있으면 Namespace가 달라도 같은 파일이 그대로 보인다
+
+정리하면 Namespace는 "이름 충돌 방지"와 "라벨 기반 연결 범위"는 확실히 나눠주지만, **네트워크나 Node 자원을 직접 건드리는 부분은 별도로 막아야 한다.**
+
 ---
 
 ## ResourceQuota: Namespace의 자원 예산
@@ -87,6 +102,14 @@ spec:
 여기서 중요한 점 하나. **ResourceQuota가 걸려 있는 Namespace에 Pod를 만들려면, 그 Pod는 반드시 자원 요청(request)과 제한(limit)을 명시해야 한다.** 명시하지 않으면 아예 생성되지 않는다. 그리고 이미 요청 자원의 합이 쿼터에 근접해 있으면, 새로 들어오려는 Pod의 요청까지 더했을 때 한계를 넘는 경우에도 생성이 거부된다.
 
 메모리·CPU뿐 아니라 스토리지, 그리고 Pod 개수 같은 오브젝트 숫자도 제한할 수 있다. 다만 모든 종류의 오브젝트를 다 제한할 수 있는 건 아니고, 쿠버네티스 버전이 올라가면서 제한 가능한 오브젝트 종류가 계속 늘어나는 중이라, 사용하기 전에 현재 버전(현재 최신은 1.36)에서 어떤 오브젝트까지 지원하는지 확인해보는 게 안전하다.
+
+### ResourceQuota를 걸 때는 순서가 중요하다
+
+ResourceQuota 없이 Pod를 두 개 먼저 만들어두고, 그다음에 ResourceQuota를 걸면 **아무 문제 없이 그냥 만들어진다.** "ResourceQuota가 있으면 Pod가 resource 스펙을 필수로 명시해야 한다"는 규칙은 신규로 생성되는 Pod에만 적용되고, 이미 존재하던 Pod는 이 검증을 그냥 통과해버리기 때문이다.
+
+문제는 여기서 시작된다. 예를 들어 Namespace의 쿼터가 1GB인데, 이미 있던 Pod 두 개가 검증 없이 자원을 쓰고 있는 상태에서 새로 1GB짜리 Pod를 하나 더 만들면, **실제로는 쿼터보다 훨씬 많은 자원을 쓰는 상황**이 만들어질 수 있다. ResourceQuota가 신규 생성 건은 확실히 막아주지만, 이미 떠 있던 Pod까지 소급 적용해서 잘라내진 않기 때문이다.
+
+그래서 실무에서 중요한 순서는: **Namespace를 만들면 Pod를 띄우기 전에 ResourceQuota부터 먼저 걸어두는 것.** 순서가 바뀌면 자원 계산이 꼬인 채로 운영하게 될 수 있다.
 
 ---
 
@@ -132,6 +155,14 @@ spec:
 
 LimitRange의 `type`은 Container 단위뿐 아니라 PersistentVolumeClaim 단위로도 설정할 수 있는데, 타입마다 지원하는 옵션이 다르니 이 부분도 필요할 때 문서를 확인하는 게 좋을 것 같다.
 
+### LimitRange는 하나만 쓰는 게 안전하다
+
+request:limit 비율을 5로 설정하면 (허용치 3을 넘어서) 에러가 난다. limit을 낮추고 request를 높여서 비율을 2로 맞추면 정상적으로 만들어진다 — 여기까지는 앞서 설명한 규칙 그대로다.
+
+문제는 **한 Namespace에 LimitRange를 두 개 만들 수도 있다는 점**이다. 이것도 에러 없이 그냥 만들어진다. 만약 두 LimitRange의 max 값이 각각 0.3GB, 0.5GB로 다르면, Pod를 만들 때 **더 작은(엄격한) 쪽인 0.3GB 기준으로 적용**된다. default 값도 두 LimitRange가 서로 다르게 설정되어 있으면, 어느 쪽 default가 적용되는지 미리 예측하기 어렵다.
+
+즉 **한 Namespace에 LimitRange를 여러 개 둘 수는 있지만, 그러면 예상치 못한 조합으로 동작할 수 있다.** 그래서 실무에서는 Namespace당 LimitRange를 하나만 쓰는 게 안전하다.
+
 ---
 
 ## 용어 정리
@@ -144,3 +175,5 @@ LimitRange의 `type`은 Container 단위뿐 아니라 PersistentVolumeClaim 단�
 | **maxLimitRequestRatio** | LimitRange에서 request 대비 limit의 최대 허용 배수를 정하는 값 |
 | **defaultRequest / default** | Pod에 자원 스펙이 없을 때 자동으로 채워지는 request/limit 기본값 |
 | **NetworkPolicy** | Namespace 간, Pod 간 네트워크 통신을 실제로 제한할 때 사용하는 오브젝트 |
+| **NodePort** | Node의 30000~32767번 포트를 열어 외부 접근을 허용하는 Service 타입. 포트 범위는 Namespace로 나뉘지 않고 클러스터 전체가 공유 |
+| **hostPath** | Node의 특정 디스크 경로를 그대로 Pod에 마운트하는 볼륨 타입. 같은 Node면 Namespace가 달라도 파일이 공유됨 |

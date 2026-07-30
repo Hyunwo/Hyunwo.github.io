@@ -3,6 +3,7 @@ layout: post
 title: "네임스페이스, ResourceQuota, LimitRange로 자원 나눠 쓰기"
 date: 2026-07-27
 tags: [kubernetes, infra]
+categories: [kubernetes]
 ---
 
 오늘은 네임스페이스를 조금 더 깊게 보고, ResourceQuota와 LimitRange를 처음 배웠다. 왜 이 두 오브젝트가 필요한지부터 시작하는 게 이해하는 데 훨씬 도움이 됐다.

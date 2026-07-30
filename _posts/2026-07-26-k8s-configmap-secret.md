@@ -3,6 +3,7 @@ layout: post
 title: "ConfigMap과 Secret: 왜 필요하고 어떻게 다른가"
 date: 2026-07-26
 tags: [kubernetes, infra]
+categories: [kubernetes]
 ---
 
 이번 강의는 ConfigMap과 Secret이었다. 둘 다 이름은 익숙한데 왜 필요한지, Secret이 정확히 뭐가 다른지는 헷갈렸던 부분이라 정리해본다.

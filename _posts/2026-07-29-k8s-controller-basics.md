@@ -3,6 +3,7 @@ layout: post
 title: "Controller 개요와 ReplicationController, ReplicaSet"
 date: 2026-07-29
 tags: [kubernetes, infra]
+categories: [kubernetes]
 ---
 
 오늘부터는 Controller를 다룬다. 먼저 Controller가 전반적으로 왜 필요한지 훑고, 그다음 가장 기본이 되는 ReplicationController와 ReplicaSet을 정리한다.

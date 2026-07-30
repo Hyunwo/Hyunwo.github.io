@@ -11,6 +11,9 @@ markdown: kramdown
 # 퍼머링크 형식: /2026/07/22/vm-vs-container/ 형태로 생성
 permalink: /:year/:month/:day/:title/
 
+# 홈 화면에서 각 글 제목 아래에 본문 첫 문단을 미리보기로 보여줌
+show_excerpts: true
+
 # 홈 화면에 보여줄 글 개수
 paginate: 10
 paginate_path: "/page:num/"

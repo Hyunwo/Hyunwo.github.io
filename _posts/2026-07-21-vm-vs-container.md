@@ -3,6 +3,7 @@ layout: post
 title: "VM과 Container의 차이"
 date: 2026-07-21
 tags: [kubernetes, docker, infra]
+categories: [kubernetes]
 ---
 
 ## 공통점: Host Server → Host OS까지는 동일

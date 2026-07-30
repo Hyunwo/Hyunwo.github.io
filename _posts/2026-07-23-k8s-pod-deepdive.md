@@ -3,6 +3,7 @@ layout: post
 title: "Pod 심화: 멀티 컨테이너, 라벨, 노드 스케줄링, 리소스 제한"
 date: 2026-07-23
 tags: [kubernetes, infra]
+categories: [kubernetes]
 ---
 
 어제 클러스터랑 네임스페이스 개념을 정리했는데, 오늘은 Pod 안쪽을 더 자세히 들여다보는 내용이었다. 한 Pod에 컨테이너가 여러 개 들어갈 때 어떻게 동작하는지, 라벨은 왜 다는지, Pod가 어느 노드에 배치되는지까지.

@@ -90,7 +90,7 @@ spec:
 - **activeDeadlineSeconds**: Job의 최대 허용 시간. `30`이면 30초가 지나는 순간 진행 중이던 Pod는 전부 삭제되고, 아직 실행 안 된 Pod도 더 이상 실행되지 않는다. 원래 예상 시간보다 훨씬 오래 걸리면 "행이 걸렸다"고 보고 자원을 회수하는 안전장치다
 - **restartPolicy**: Job의 Pod는 `Never`와 `OnFailure` 중 하나만 쓸 수 있다. (Deployment/ReplicaSet처럼 계속 떠 있어야 하는 Pod가 쓰는 `Always`는 Job에서는 아예 선택할 수 없다)
 
-> 참고로 최신 버전에는 여기 없는 `podFailurePolicy`, `backoffLimitPerIndex` 같은 좀 더 세밀한 실패 처리 옵션도 추가되어 있다. 기본적인 재시도 제어는 `backoffLimit`으로 충분하고, 인덱스별로 다르게 제어하고 싶을 때 참고하면 될 것 같다.
+> 참고로 Kubernetes 1.31부터는 `podFailurePolicy`라는 옵션이 정식 기능(stable)으로 추가됐다. 이걸 쓰면 Pod가 실패했을 때 종료 코드나 상태에 따라 "이건 재시도할 가치가 있다 / 이건 바로 실패 처리하자"를 세밀하게 나눠서 처리할 수 있다. `backoffLimit` 하나로는 모든 실패를 똑같이 취급하는데, 예를 들어 노드 문제로 강제 종료된 경우는 재시도 횟수에서 제외하는 식의 처리가 가능해진다. Indexed Job에서 인덱스별로 재시도 횟수를 따로 관리하는 `backoffLimitPerIndex`는 Kubernetes 1.33부터 정식 기능이 됐다. 현재 최신 버전인 1.36에서도 둘 다 그대로 쓸 수 있다.
 
 ---
 
@@ -129,9 +129,9 @@ spec:
 - **Forbid**: 이전 Job이 아직 실행 중이면 이번 스케줄은 건너뛴다. 이전 Job이 끝나는 즉시 다음 스케줄의 Job이 실행된다
 - **Replace**: 이전 Job을 취소하고 새 스케줄의 Job으로 교체한다. 참고로 이 동작은 예전 버전과 달라졌는데, **기존 Job이 살아남아서 새 Pod에 연결되는 게 아니라, 기존 Job과 Pod를 삭제하고 완전히 새로운 Job과 Pod를 만드는 방식**으로 바뀌었다
 
-### timeZone: 최신에 추가된 필드
+### timeZone: Kubernetes 1.27부터 정식 추가된 필드
 
-강의에는 없던 내용인데, Kubernetes 1.27부터 CronJob에 `spec.timeZone` 필드가 정식으로 추가됐다. 이게 없던 시절에는 schedule이 클러스터 컨트롤 플레인의 시간대(보통 UTC) 기준으로만 동작해서, 한국 시간 기준으로 스케줄을 맞추려면 시차를 직접 계산해서 cron 표현식에 반영해야 했다. 지금은 위 예시처럼 `timeZone: "Asia/Seoul"`을 넣어주면 그 시간대 기준으로 바로 스케줄이 돈다.
+강의에는 없던 내용이다. Kubernetes 1.27부터 CronJob에 `spec.timeZone` 필드가 정식 기능(stable)으로 추가됐다. 이게 없던 시절에는 schedule이 클러스터 컨트롤 플레인의 시간대(보통 UTC) 기준으로만 동작해서, 한국 시간 기준으로 스케줄을 맞추려면 시차를 직접 계산해서 cron 표현식에 반영해야 했다. 지금(1.27 이상, 현재 최신 버전 1.36 포함)은 위 예시처럼 `timeZone: "Asia/Seoul"`을 넣어주면 그 시간대 기준으로 바로 스케줄이 돈다.
 
 ---
 
@@ -146,6 +146,8 @@ spec:
 | **parallelism** | Job에서 동시에 실행할 수 있는 Pod 개수 |
 | **activeDeadlineSeconds** | Job의 최대 허용 실행 시간. 초과 시 모든 Pod가 삭제되고 Job이 중단됨 |
 | **backoffLimit** | Job의 Pod가 실패했을 때 재시도할 수 있는 최대 횟수 |
+| **podFailurePolicy** | 종료 코드/Pod 상태에 따라 재시도 여부를 세밀하게 제어하는 옵션 (Kubernetes 1.31+, stable) |
+| **backoffLimitPerIndex** | Indexed Job에서 인덱스별로 재시도 횟수를 따로 관리하는 옵션 (Kubernetes 1.33+, stable) |
 | **CronJob** | Job을 지정한 주기(schedule)마다 자동으로 생성해주는 Controller |
 | **concurrencyPolicy** | 이전 스케줄의 Job이 끝나지 않은 상태에서 다음 스케줄이 도래했을 때의 처리 방식 (Allow/Forbid/Replace) |
-| **timeZone** | CronJob의 schedule을 해석할 기준 시간대를 지정하는 필드 (Kubernetes 1.27+) |
+| **timeZone** | CronJob의 schedule을 해석할 기준 시간대를 지정하는 필드 (Kubernetes 1.27+, stable) |

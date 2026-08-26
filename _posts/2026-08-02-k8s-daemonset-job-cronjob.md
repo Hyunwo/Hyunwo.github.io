@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-지금까지 ReplicaSet, Deployment처럼 "계속 떠 있어야 하는 서비스"를 관리하는 Controller를 봤다면, 오늘은 성격이 다른 세 가지 — DaemonSet, Job, CronJob을 정리한다.
+지금까지 ReplicaSet, Deployment처럼 "계속 떠 있어야 하는 서비스"를 관리하는 Controller를 봤다면, 이번엔 성격이 다른 세 가지 — DaemonSet, Job, CronJob을 정리한다.
 
 ## Pod를 누가 만들었는지에 따라 동작이 달라진다
 

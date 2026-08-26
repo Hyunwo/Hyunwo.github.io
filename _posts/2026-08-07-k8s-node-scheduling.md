@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-오늘 강의는 Pod가 어느 Node에 배치될지를 제어하는 다양한 방법들이었다. 종류가 많아서(NodeName, NodeSelector, NodeAffinity, PodAffinity/AntiAffinity, Taint/Toleration) 정리하지 않으면 헷갈릴 것 같다.
+Pod가 어느 Node에 배치될지를 제어하는 방법은 여러 가지다(NodeName, NodeSelector, NodeAffinity, PodAffinity/AntiAffinity, Taint/Toleration). 종류가 많아 헷갈리기 쉬워서 정리한다.
 
 ## 다섯 가지 방법, 언제 쓰는가
 

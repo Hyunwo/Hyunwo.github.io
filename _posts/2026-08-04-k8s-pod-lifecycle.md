@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-이번 강의는 Pod 라이프사이클이었다. 사람이 태어나서 유아기, 청소년기를 거쳐 생을 마감하는 것처럼, Pod도 생성부터 소멸까지 정해진 단계를 거친다는 비유로 시작했다. 앞으로 배울 readiness probe, liveness probe, QoS 같은 개념들이 전부 이 라이프사이클의 특정 단계와 맞물려 있다고 해서, 처음엔 복잡해 보여도 제대로 짚고 넘어가야겠다 싶었다.
+Pod 라이프사이클을 정리한다. 사람이 태어나서 유아기, 청소년기를 거쳐 생을 마감하듯, Pod도 생성부터 소멸까지 정해진 단계를 거친다. readiness probe, liveness probe, QoS 같은 개념들이 전부 이 단계와 맞물려 있어서, 처음에 제대로 짚어두면 이후 개념들이 훨씬 쉽게 이해된다.
 
 ## Pod Status는 3단계로 나뉜다
 

@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-이번 강의는 ConfigMap과 Secret이었다. 둘 다 이름은 익숙한데 왜 필요한지, Secret이 정확히 뭐가 다른지는 헷갈렸던 부분이라 정리해본다.
+ConfigMap과 Secret은 이름은 익숙해도 왜 필요한지, 서로 뭐가 다른지는 헷갈리기 쉬운 주제다. 사용 이유부터 차이점까지 정리한다.
 
 ## 왜 필요한가: 이미지 안에 값을 박아두면 생기는 문제
 

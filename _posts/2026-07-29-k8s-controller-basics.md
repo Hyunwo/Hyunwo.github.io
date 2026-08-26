@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-오늘부터는 Controller를 다룬다. 먼저 Controller가 전반적으로 왜 필요한지 훑고, 그다음 가장 기본이 되는 ReplicationController와 ReplicaSet을 정리한다.
+Controller가 전반적으로 왜 필요한지부터 짚고, 가장 기본이 되는 ReplicationController와 ReplicaSet을 정리한다.
 
 ## Controller가 제공하는 4가지 기능
 
@@ -19,7 +19,7 @@ Controller는 서비스를 안정적으로 운영하는 데 필요한 기능들�
 
 여기서 하나 정확히 짚고 갈 부분이 있다. **Auto-scaling은 ReplicaSet 자체에 내장된 기능이 아니다.** ReplicaSet은 정해진 `replicas` 수를 유지해줄 뿐이고, 리소스 사용량을 보고 그 수를 자동으로 늘리거나 줄여주는 건 **HorizontalPodAutoscaler(HPA)**라는 별도 오브젝트의 역할이다. HPA가 지표를 보고 ReplicaSet(또는 Deployment)의 `replicas` 값을 조정해주는 방식으로 동작한다.
 
-쿠버네티스의 여러 오브젝트가 이런 Controller 역할을 나눠 맡고 있는데, 오늘은 그중 가장 기본이 되는 ReplicationController와 ReplicaSet을 다룬다.
+쿠버네티스의 여러 오브젝트가 이런 Controller 역할을 나눠 맡고 있는데, 이 글에서는 그중 가장 기본이 되는 ReplicationController와 ReplicaSet을 다룬다.
 
 ---
 

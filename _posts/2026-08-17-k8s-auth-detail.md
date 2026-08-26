@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-지난 글(8/14)에서 Authentication을 개념만 짚었다면, 오늘은 실제로 API Server에 접근할 때 쓰는 3가지 방법 — **X.509 인증서, kubectl(kubeconfig), ServiceAccount**를 좀 더 실제 동작 단위로 파고들었다.
+지난 글(8/14)에서 Authentication을 개념만 짚었다면, 이번엔 실제로 API Server에 접근할 때 쓰는 3가지 방법 — **X.509 인증서, kubectl(kubeconfig), ServiceAccount**를 좀 더 실제 동작 단위로 정리한다.
 
 ## 인증서는 어떻게 만들어지는가
 

@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-오늘 강의는 QoS Classes였는데, 슬라이드 정보량이 많아서 처음엔 잘 안 들어왔다. 그림 하나에 Guaranteed/Burstable/BestEffort 세 가지가 한꺼번에 있고, OOM Score 계산까지 같이 나와서 헷갈렸다. 하나씩 쪼개서 다시 정리해본다.
+QoS Classes는 Guaranteed/Burstable/BestEffort 세 가지 등급과 OOM Score 계산까지 한 번에 다뤄지면 헷갈리기 쉬운 주제다. 하나씩 쪼개서 정리한다.
 
 ## 왜 필요한 개념인가
 

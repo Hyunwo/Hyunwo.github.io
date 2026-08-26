@@ -6,7 +6,7 @@ tags: [kubernetes, docker, infra]
 categories: [kubernetes]
 ---
 
-인프런 쿠버네티스 강의를 시작하면서 제일 먼저 나온 게 VM과 Container의 차이였다. 개념 자체는 익숙하다고 생각했는데, 막상 "그래서 뭐가 정확히 다른데?"라고 물으면 말이 막혔다. 강의 듣고 정리하면서 처음으로 확실히 이해했다.
+VM과 Container는 익숙한 개념이지만, 막상 정확한 차이를 설명하려면 말문이 막히기 쉽다. 가상화 방식의 차이부터 쿠버네티스 Pod 개념까지 정리한다.
 
 ## 공통점: Host Server → Host OS까지는 동일
 

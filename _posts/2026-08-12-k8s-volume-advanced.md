@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-초급편에서 배운 Volume(PV, PVC)을 더 깊게 다루는 강의였다. 실습편 안내에 "StorageOS는 Deprecated됐다"는 문구가 있었는데, 확인해보니 생각보다 배경이 커서 이 부분부터 짚고 넘어가야 할 것 같다.
+초급편에서 배운 Volume(PV, PVC)을 더 깊게 정리한다. 실습편에 "StorageOS는 Deprecated됐다"는 안내가 있었는데, 배경이 생각보다 커서 이 부분부터 짚고 넘어간다.
 
 ## 먼저: 강의에 나온 스토리지 솔루션 중 지금은 못 쓰는 것들
 

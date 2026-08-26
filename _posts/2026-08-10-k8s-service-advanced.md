@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-초급편에서 배운 Service(ClusterIP, NodePort, LoadBalancer)는 전부 "사용자가 Pod에 접근하는" 관점이었다. 오늘은 반대로 **Pod가 다른 Pod나 외부 서비스에 연결하는** 관점을 다뤘다.
+초급편에서 배운 Service(ClusterIP, NodePort, LoadBalancer)는 전부 "사용자가 Pod에 접근하는" 관점이었다. 이 글에서는 반대로 **Pod가 다른 Pod나 외부 서비스에 연결하는** 관점을 다룬다.
 
 ## 복습: 사용자가 Pod에 접근하는 3가지 방법
 
@@ -18,7 +18,7 @@ categories: [kubernetes]
 
 이 세 가지는 전부 "사람이 서비스 IP를 보고 접근하는" 상황을 위한 거였다.
 
-## 오늘의 문제: Pod가 다른 Pod를 어떻게 찾을까
+## 문제: Pod가 다른 Pod를 어떻게 찾을까
 
 Pod A가 Pod B에 접근해야 하는 상황을 생각해보자. IP를 코드에 박아두면 안 된다. 이유는 두 가지다.
 

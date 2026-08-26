@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-오늘은 네임스페이스를 조금 더 깊게 보고, ResourceQuota와 LimitRange를 처음 배웠다. 왜 이 두 오브젝트가 필요한지부터 시작하는 게 이해하는 데 훨씬 도움이 됐다.
+네임스페이스를 조금 더 깊게 보고, ResourceQuota와 LimitRange를 정리한다. 왜 이 두 오브젝트가 필요한지부터 짚고 넘어가면 이해하기 훨씬 수월하다.
 
 ## 왜 필요한가: 한 팀이 자원을 다 쓰면 다른 팀이 곤란해진다
 

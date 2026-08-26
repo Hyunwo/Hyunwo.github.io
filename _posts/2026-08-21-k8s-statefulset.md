@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-오늘은 StatefulSet이었다. 지금까지 다룬 Deployment/ReplicaSet은 전부 "똑같은 Pod 여러 개"를 다루는 컨트롤러였는데, StatefulSet은 "서로 다른 역할을 가진 Pod들"을 다룬다는 점에서 접근 자체가 다르다.
+StatefulSet을 정리한다. 지금까지 다룬 Deployment/ReplicaSet은 전부 "똑같은 Pod 여러 개"를 다루는 컨트롤러였는데, StatefulSet은 "서로 다른 역할을 가진 Pod들"을 다룬다는 점에서 접근 자체가 다르다.
 
 ## Stateless vs Stateful: 애초에 앱 성격이 다르다
 

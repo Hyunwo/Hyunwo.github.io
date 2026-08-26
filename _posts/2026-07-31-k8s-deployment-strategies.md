@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-오늘은 Deployment를 다루는 강의였다. 배포 전략 4가지 개요부터, Deployment가 실제로 어떻게 ReplicaSet을 만들어 동작하는지, Recreate와 RollingUpdate가 내부적으로 어떤 순서로 진행되는지까지 정리한다.
+Deployment의 배포 전략 4가지 개요부터, 실제로 어떻게 ReplicaSet을 만들어 동작하는지, Recreate와 RollingUpdate가 내부적으로 어떤 순서로 진행되는지까지 정리한다.
 
 ## Deployment는 왜 필요한가
 

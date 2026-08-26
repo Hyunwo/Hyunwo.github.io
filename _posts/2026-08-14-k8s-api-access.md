@@ -6,7 +6,7 @@ tags: [kubernetes, infra]
 categories: [kubernetes]
 ---
 
-이번 강의는 짧았는데 처음엔 이해가 잘 안 됐다. 다시 천천히 풀어서 정리해본다.
+Kubernetes API 접근 구조는 짧게 설명되지만 막상 이해하려면 헷갈리기 쉬운 주제다. 천천히 풀어서 정리한다.
 
 ## 제일 먼저: 모든 건 API Server를 거친다
 

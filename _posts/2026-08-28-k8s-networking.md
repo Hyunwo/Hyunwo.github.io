@@ -62,18 +62,18 @@ Service IP를 Pod IP로 바꿔주는 게 **NAT** 기능인데, 이걸 실제로 
 ![kube-proxy Proxy Mode]({{ site.baseurl }}/assets/images/k8s-networking/proxy_mode_fixed.png)
 
 - **Userspace**: 모든 트래픽이 kube-proxy 프로세스를 직접 거쳐야 해서 성능·안정성이 떨어져 예전부터 잘 안 쓰였는데, **Kubernetes 1.26에서 아예 제거**됐다
-- **iptables**: kube-proxy가 매핑 정보를 iptables에 직접 등록하는 방식. **지금도 설치 시 기본 모드**다
-- **IPVS**: 리눅스의 L4 로드밸런서 기능을 활용해서 iptables보다 나은 성능(특히 부하가 클 때)을 내던 방식인데, **Kubernetes 1.35부터 Deprecated**됐다
-- **nftables**: iptables의 성능 한계를 개선한 새 모드로 **1.33부터 stable**. 최신 커널을 쓰는 클러스터에는 이 모드가 신규 권장이지만, 아직 기본값은 iptables다
+- **iptables**: kube-proxy가 매핑 정보를 iptables에 직접 등록하는 방식. **1.36까지는 기본 모드였지만, 1.37부터는 기본값 자리를 nftables에 넘겼다**
+- **IPVS**: 리눅스의 L4 로드밸런서 기능을 활용해서 iptables보다 나은 성능(특히 부하가 클 때)을 내던 방식인데, **1.35부터 Deprecated**됐고 **1.37부터는 `KubeProxyIPVS` feature gate로 여러 릴리즈에 걸친 정식 제거 절차가 시작**됐다
+- **nftables**: iptables의 성능 한계를 개선한 모드로 **1.33부터 stable**이었는데, **Kubernetes 1.37부터 kube-proxy의 기본값**이 됐다
 
-정리하면 지금(1.36) 실질적으로 쓰이는 건 **iptables(기본)와 nftables(신규 권장)** 둘이다.
+정리하면 **현재(1.37) 기준 기본값은 nftables**이고, iptables는 이전 버전과의 호환을 위해 계속 선택 가능한 모드로 남아있다. IPVS는 제거 절차가 진행 중이라 신규 클러스터에는 쓰지 않는 게 좋다.
 
 ### Calico + Service: ClusterIP와 NodePort
 
 Calico를 쓸 때는 이 Router 부분에 Service IP를 Pod IP로 바꿔주는 NAT 기능이 포함된다.
 
 - **ClusterIP**: Pod가 Service IP로 트래픽을 보내면, Router의 NAT에서 곧바로 매칭되는 Pod IP로 변환되고, 그다음부터는 앞서 본 Overlay Network를 통한 Pod 간 통신과 동일하게 처리된다
-- **NodePort**: 모든 Node의 kube-proxy가 자기 Node의 30000번대 포트를 열어두고, 외부에서 이 포트로 들어온 트래픽을 iptables가 감지해서 Calico 네트워크 플러그인으로 넘긴다. 이후 흐름은 ClusterIP와 동일하게 NAT를 거쳐 Pod 네트워크 영역으로 들어간다
+- **NodePort**: 모든 Node의 kube-proxy가 자기 Node의 30000번대 포트를 열어두고, 외부에서 이 포트로 들어온 트래픽을 kube-proxy가 설정해둔 규칙(nftables 또는 iptables)이 감지해서 Calico 네트워크 플러그인으로 넘긴다. 이후 흐름은 ClusterIP와 동일하게 NAT를 거쳐 Pod 네트워크 영역으로 들어간다
 
 Service를 삭제하면 API Server가 이를 감지해서 kube-proxy에게 관련 설정을 지우라고 지시한다. 결국 Service 오브젝트의 실체는 **NAT 영역의 설정값**인 셈이다.
 
@@ -91,4 +91,4 @@ Service를 삭제하면 API Server가 이를 감지해서 kube-proxy에게 관�
 | **캡슐화 / 디캡슐화** | 실제 Pod IP를 감추고 목적지 Node IP로 감싸서 보내는 것 / 도착 후 원래 IP로 복원하는 것 |
 | **Endpoint** | Service와 Pod의 실제 연결 상태를 담당하는 오브젝트 |
 | **kube-DNS** | Service 이름과 IP를 등록해서 도메인 이름으로 조회할 수 있게 해주는 DNS |
-| **Proxy Mode** | kube-proxy가 Service IP를 Pod IP로 바꾸는 NAT 처리 방식. 현재는 iptables(기본), nftables(권장) 위주 |
+| **Proxy Mode** | kube-proxy가 Service IP를 Pod IP로 바꾸는 NAT 처리 방식. Kubernetes 1.37부터 nftables가 기본값, iptables는 선택 가능, IPVS는 제거 진행 중 |

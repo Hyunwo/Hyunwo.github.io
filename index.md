@@ -17,8 +17,10 @@ title: 정현우 | Cloud Infra Log
     <span style="background:#eef4fb; color:#1d4a6b; font-size:12px; padding:4px 10px; border-radius:5px;">Terraform</span>
   </div>
 
-  <div style="display:flex; gap:8px;">
-    <a href="#recent-posts" style="background:var(--accent); color:#ffffff; font-size:13px; font-weight:700; padding:8px 16px; border-radius:6px; text-decoration:none;">글 목록 보기</a>
+  <div style="display:flex; gap:8px; flex-wrap:wrap;">
+    <a href="{{ '/kubernetes/' | relative_url }}" style="background:var(--accent); color:#ffffff; font-size:13px; font-weight:700; padding:8px 16px; border-radius:6px; text-decoration:none;">Kubernetes 글 보기</a>
+    <a href="{{ '/aws/' | relative_url }}" style="background:#c99a1e; color:#ffffff; font-size:13px; font-weight:700; padding:8px 16px; border-radius:6px; text-decoration:none;">AWS 글 보기</a>
+    <a href="#recent-posts" style="background:transparent; border:0.5px solid #c9c9c9; color:#4a4a4a; font-size:13px; padding:8px 16px; border-radius:6px; text-decoration:none;">전체 글 목록</a>
     <a href="https://github.com/Hyunwo" style="background:transparent; border:0.5px solid #c9c9c9; color:#4a4a4a; font-size:13px; padding:8px 16px; border-radius:6px; text-decoration:none;">GitHub</a>
   </div>
 </div>

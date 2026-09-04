@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper site-body-wrapper">
+
+        <aside class="site-sidebar">
+          <div class="sidebar-title">Categories</div>
+          <nav class="sidebar-nav">
+            <a href="{{ '/' | relative_url }}" class="sidebar-link{% if page.url == '/' %} active{% endif %}">Home</a>
+            <a href="{{ '/kubernetes/' | relative_url }}" class="sidebar-link{% if page.url == '/kubernetes/' %} active{% endif %}">Kubernetes</a>
+            <a href="{{ '/aws/' | relative_url }}" class="sidebar-link{% if page.url == '/aws/' %} active{% endif %}">AWS</a>
+          </nav>
+          <div class="sidebar-divider"></div>
+          <a href="https://github.com/Hyunwo" class="sidebar-link" target="_blank" rel="noopener">GitHub ↗</a>
+        </aside>
+
+        <div class="site-main">
+          {{ content }}
+        </div>
+
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

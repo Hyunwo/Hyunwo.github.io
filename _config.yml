@@ -18,6 +18,11 @@ show_excerpts: true
 paginate: 10
 paginate_path: "/page:num/"
 
+# 우측 상단 네비게이션: 여기 명시한 페이지만 노출됨 (About만)
+# kubernetes.md, aws.md는 사이드바 전용이라 여기서 제외
+header_pages:
+  - about.md
+
 # 목차(TOC) 등에서 제외할 파일/폴더
 exclude:
   - README.md

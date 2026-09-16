@@ -22,7 +22,7 @@ Security Group은 기본적으로 모든 포트가 비활성화되어 있다. �
 
 Security Group은 하나의 EC2(정확히는 ENI)에 하나 이상 동시에 적용할 수 있다. 이때 허용 규칙은 합집합으로 적용된다.
 
-![보안그룹 다중 적용과 역할별 보안그룹](/images/sg_multiple_rules.png)
+![보안그룹 다중 적용과 역할별 보안그룹](/assets/images/aws-security-group/sg_multiple_rules.png)
 
 왼쪽처럼 보안그룹 A(443 허용)와 B(8080 허용)를 동시에 붙이면 443과 8080 모두 통과한다. 오른쪽처럼 Web 서버용 보안그룹(80, 443, 22 허용)과 DB 서버용 보안그룹(3306, 22 허용)을 역할별로 따로 두는 것도 흔한 패턴이다. 이 경우 8080처럼 어느 쪽에도 없는 포트는 당연히 차단된다 — Allow만 가능한 구조이기 때문이다.
 
@@ -38,7 +38,7 @@ Security Group은 특정 VPC 안에서 생성되고 관리되며, 원칙적으�
 
 이 둘의 차이를 이해하려면 먼저 통신에 쓰이는 두 종류의 포트를 알아야 한다. 서버가 쓰는 포트는 프로토콜마다 정해져 있다(HTTP는 80, HTTPS는 443). 이걸 **Well-known Port**라 부른다. 반대로 클라이언트가 쓰는 포트는 그 순간 사용하지 않는 포트 중 아무거나 무작위로 고른다. 이걸 **Ephemeral Port(임시 포트)**라 부르고, 매 통신마다 달라질 수 있다.
 
-![Stateful과 Stateless 트래픽 흐름 비교](/images/sg_stateful_flow.png)
+![Stateful과 Stateless 트래픽 흐름 비교](/assets/images/aws-security-group/sg_stateful_flow.png)
 
 Security Group이 Stateful하다는 건, 인바운드로 들어온 트래픽을 기억해서 그에 대한 응답은 별도의 아웃바운드 설정 없이도 자동으로 내보내 준다는 뜻이다. 80번 포트로 들어오는 요청만 Inbound Allow로 열어두면, 그 요청에 대한 응답은 따로 아웃바운드 규칙을 만들지 않아도 나간다. 얼굴을 아는 손님을 알아보고 그냥 내보내주는 똑똑한 문지기에 가깝다.
 

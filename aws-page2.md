@@ -1,17 +1,17 @@
 ---
 layout: page
-title: AWS
-permalink: /aws/
+title: AWS (2)
+permalink: /aws/page2/
 ---
 
 <div style="margin-bottom: 1.5rem;">
-  <span style="font-family:'SFMono-Regular', Consolas, Menlo, monospace; font-size:13px; color:var(--accent);">$ ls aws/</span>
+  <span style="font-family:'SFMono-Regular', Consolas, Menlo, monospace; font-size:13px; color:var(--accent);">$ ls aws/ --page 2</span>
 </div>
 
 {% assign per_page = 10 %}
 {% assign all_posts = site.categories.aws | sort: 'date' | reverse %}
 {% assign total = all_posts | size %}
-{% assign page_posts = all_posts | slice: 0, per_page %}
+{% assign page_posts = all_posts | slice: per_page, per_page %}
 
 <ul class="post-list">
 {% for post in page_posts %}
@@ -27,8 +27,12 @@ permalink: /aws/
 {% endfor %}
 </ul>
 
-{% if total > per_page %}
-<p style="text-align:right;"><a href="{{ '/aws/page2/' | relative_url }}">다음 페이지 →</a></p>
-{% endif %}
+<p style="display:flex; justify-content:space-between;">
+  <a href="{{ '/aws/' | relative_url }}">← 이전 페이지</a>
+  {% assign next_offset = per_page | times: 2 %}
+  {% if total > next_offset %}
+  <a href="{{ '/aws/page3/' | relative_url }}">다음 페이지 →</a>
+  {% endif %}
+</p>
 
 <p><a href="{{ '/' | relative_url }}">← 전체 글로 돌아가기</a></p>

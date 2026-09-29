@@ -11,11 +11,11 @@ permalink: /kubernetes/
 {% assign per_page = 10 %}
 {% assign all_posts = site.categories.kubernetes | sort: 'date' | reverse %}
 {% assign total = all_posts | size %}
-{% assign page_posts = all_posts | slice: 0, per_page %}
+{% assign remaining = total | minus: per_page %}
 
-<ul class="post-list">
-{% for post in page_posts %}
-  <li>
+<ul class="post-list" id="k8s-post-list">
+{% for post in all_posts %}
+  <li{% if forloop.index > per_page %} class="hidden-post" style="display:none;"{% endif %}>
     <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
     <h3>
       <a class="post-link" href="{{ post.url | relative_url }}">
@@ -28,7 +28,18 @@ permalink: /kubernetes/
 </ul>
 
 {% if total > per_page %}
-<p style="text-align:right;"><a href="{{ '/kubernetes/page2/' | relative_url }}">다음 페이지 →</a></p>
+<p style="text-align:center; margin-top:1.5rem;">
+  <button id="k8s-load-more" style="background:transparent; border:1px solid #c9c9c9; color:#4a4a4a; font-size:13px; padding:8px 20px; border-radius:6px; cursor:pointer;">더보기 ({{ remaining }}개 더)</button>
+</p>
+<script>
+document.getElementById('k8s-load-more').addEventListener('click', function () {
+  document.querySelectorAll('#k8s-post-list .hidden-post').forEach(function (el) {
+    el.style.display = '';
+    el.classList.remove('hidden-post');
+  });
+  this.style.display = 'none';
+});
+</script>
 {% endif %}
 
 <p><a href="{{ '/' | relative_url }}">← 전체 글로 돌아가기</a></p>

@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: page
 title: 정현우 | Cloud Infra Log
 ---
 
@@ -24,3 +24,43 @@ title: 정현우 | Cloud Infra Log
 </div>
 
 <div id="recent-posts"></div>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+<ul class="post-list" id="home-post-list">
+{% for post in posts %}
+  <li>
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <h3>
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+      </a>
+    </h3>
+    {% if site.show_excerpts %}{{ post.excerpt }}{% endif %}
+  </li>
+{% endfor %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+<nav style="display:flex; gap:6px; justify-content:center; margin-top:2rem; flex-wrap:wrap;">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" style="padding:6px 10px; border:1px solid #ddd; border-radius:4px; text-decoration:none; color:#4a4a4a;">‹</a>
+  {% endif %}
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <span style="padding:6px 10px; border-radius:4px; background:var(--accent); color:#fff; font-weight:700;">{{ page }}</span>
+    {% elsif page == 1 %}
+      <a href="{{ '/' | relative_url }}" style="padding:6px 10px; border:1px solid #ddd; border-radius:4px; text-decoration:none; color:#4a4a4a;">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | replace: ':num', page | relative_url }}" style="padding:6px 10px; border:1px solid #ddd; border-radius:4px; text-decoration:none; color:#4a4a4a;">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" style="padding:6px 10px; border:1px solid #ddd; border-radius:4px; text-decoration:none; color:#4a4a4a;">›</a>
+  {% endif %}
+</nav>
+{% endif %}

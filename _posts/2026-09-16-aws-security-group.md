@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "AWS Security Group: 기본 개념과 Stateful (1)"
+description: "Security Group이 ENI 단위의 Allow 전용 방화벽인 이유와 Stateful, Ephemeral Port 개념을 정리했다."
 date: 2026-09-16
 tags: [aws, vpc, security-group, network, infra]
 categories: [aws]

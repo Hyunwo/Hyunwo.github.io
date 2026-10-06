@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "AWS VPC 설계 예시: 서브넷을 어떻게 나눌 것인가"
+description: "10.0.0.0/16을 AZ × Tier로 나눠 /20 서브넷 16개를 만드는 VPC 설계 방법과 /20, /24 선택 기준을 정리했다."
 date: 2026-09-25
 tags: [aws, vpc, subnet, cidr, network, infra]
 categories: [aws]

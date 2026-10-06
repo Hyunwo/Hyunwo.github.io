@@ -19,7 +19,7 @@ permalink: /kubernetes/
         {{ post.title | escape }}
       </a>
     </h3>
-    {% if site.show_excerpts %}{{ post.excerpt }}{% endif %}
+    {% if post.description %}<p style="margin:4px 0 0; font-size:14px; color:#5a5a5a;">{{ post.description }}</p>{% elsif site.show_excerpts %}{{ post.excerpt }}{% endif %}
   </li>
 {% endfor %}
 </ul>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "AWS NAT Gateway와 Bastion Host"
+description: "Private Subnet이 인터넷으로 나가는 NAT Gateway와 외부에서 들어가는 Bastion Host의 역할, 배치 규칙, 비용을 비교해 정리했다."
 date: 2026-09-11
 tags: [aws, vpc, nat-gateway, bastion-host, network, infra]
 categories: [aws]

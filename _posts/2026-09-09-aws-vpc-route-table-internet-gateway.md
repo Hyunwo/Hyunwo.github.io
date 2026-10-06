@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "AWS VPC 라우팅: VPC Router, Route Table, Internet Gateway"
+description: "서브넷끼리 통신하게 해주는 VPC Router와 Route Table, 최장 일치 규칙, Internet Gateway로 Public Subnet이 정해지는 원리를 정리했다."
 date: 2026-09-09
 tags: [aws, vpc, route-table, internet-gateway, network, infra]
 categories: [aws]

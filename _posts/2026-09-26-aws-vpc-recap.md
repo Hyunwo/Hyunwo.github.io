@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "AWS VPC 파트 정리: 지금까지 배운 것 한눈에 보기"
+description: "VPC 파트의 7개 글을 한 장의 아키텍처 그림과 카테고리별 용어 정리로 묶어 복습한다."
 date: 2026-09-26
 tags: [aws, vpc, subnet, security-group, nacl, recap, network, infra]
 categories: [aws]

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "AWS Security Group: Source 지정 방법과 실전 활용 (2)"
+description: "Security Group의 Source를 CIDR, Prefix List, 다른 Security Group으로 지정하는 방법과 ALB 뒤 EC2를 보호하는 실전 패턴을 정리했다."
 date: 2026-09-17
 tags: [aws, vpc, security-group, prefix-list, alb, network, infra]
 categories: [aws]

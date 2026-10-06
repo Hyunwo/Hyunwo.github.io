@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "AWS VPC와 Subnet 기본 개념 정리"
+description: "VPC와 Subnet의 관계, CIDR로 IP 대역을 나누는 법, AWS가 Subnet마다 예약하는 IP 5개와 사용 가능 IP 계산을 정리했다."
 date: 2026-09-08
 tags: [aws, vpc, subnet, network, infra]
 categories: [aws]

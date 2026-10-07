@@ -1,0 +1,76 @@
+<svg width="1000" height="470" viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans CJK KR, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="aG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c99a1e"/></marker>
+    <g id="doc">
+      <path d="M0,0 L11,0 L16,5 L16,20 L0,20 Z" fill="#ffffff" stroke="#555555" stroke-width="1.2"/>
+      <path d="M11,0 L11,5 L16,5" fill="none" stroke="#555555" stroke-width="1.1"/>
+      <line x1="3" y1="10" x2="13" y2="10" stroke="#888888" stroke-width="1"/>
+      <line x1="3" y1="14" x2="13" y2="14" stroke="#888888" stroke-width="1"/>
+    </g>
+    <g id="bucket">
+      <ellipse cx="14" cy="5" rx="14" ry="5" fill="#ffffff" stroke="#27824f" stroke-width="1.5"/>
+      <path d="M0,5 L4,30 C4,32 9,33 14,33 C19,33 24,32 24,30 L28,5" fill="#ffffff" stroke="#27824f" stroke-width="1.5"/>
+    </g>
+  </defs>
+
+  <text x="500" y="32" font-size="17" font-weight="bold" fill="#333333" text-anchor="middle">S3의 구조: 리전 안의 버킷, 버킷 안의 객체</text>
+
+  <rect x="40" y="60" width="420" height="370" rx="12" fill="#ffffff" stroke="#1f4e79" stroke-width="1.6" stroke-dasharray="7,4"/>
+  <text x="60" y="84" font-size="12" font-weight="bold" fill="#1f4e79">Region: 서울 (ap-northeast-2)</text>
+
+  <rect x="65" y="104" width="370" height="305" rx="10" fill="#eafaf1" stroke="#27824f" stroke-width="2"/>
+  <use href="#bucket" x="80" y="116"/>
+  <text x="125" y="130" font-size="12.5" font-weight="bold" fill="#1c5c38">버킷 (Bucket)</text>
+  <text x="125" y="147" font-size="10" fill="#1c5c38">demo-my-s3-bucket-&lt;계정ID&gt; · 이름은 전 세계에서 고유</text>
+
+  <rect x="90" y="178" width="320" height="52" rx="7" fill="#fffdf5" stroke="#c99a1e" stroke-width="2"/>
+  <use href="#doc" x="104" y="194"/>
+  <text x="135" y="209" font-size="11.5" font-weight="bold" fill="#8a6a10">index.html</text>
+  <text x="135" y="223" font-size="9.5" fill="#8a6a10">객체 (Object)</text>
+
+  <rect x="90" y="246" width="320" height="52" rx="7" fill="#ffffff" stroke="#bbbbbb" stroke-width="1.4"/>
+  <use href="#doc" x="104" y="262"/>
+  <text x="135" y="277" font-size="11.5" fill="#555555">logo.png</text>
+  <text x="135" y="291" font-size="9.5" fill="#999999">객체 (Object)</text>
+
+  <rect x="90" y="314" width="320" height="52" rx="7" fill="#ffffff" stroke="#bbbbbb" stroke-width="1.4"/>
+  <use href="#doc" x="104" y="330"/>
+  <text x="135" y="345" font-size="11.5" fill="#555555">notes.txt (값이 비어 있으면 0바이트)</text>
+  <text x="135" y="359" font-size="9.5" fill="#999999">객체 (Object)</text>
+
+  <text x="250" y="391" font-size="10" fill="#1c5c38" text-anchor="middle" font-style="italic">데이터는 이 버킷이 속한 리전에 저장된다</text>
+
+  <line x1="412" y1="204" x2="520" y2="204" stroke="#c99a1e" stroke-width="2" marker-end="url(#aG)"/>
+
+  <rect x="525" y="60" width="440" height="370" rx="12" fill="#fffdf5" stroke="#c99a1e" stroke-width="1.8"/>
+  <text x="745" y="86" font-size="13" font-weight="bold" fill="#8a6a10" text-anchor="middle">객체 하나는 이렇게 구성된다</text>
+
+  <g font-size="11.5">
+    <rect x="545" y="104" width="400" height="44" rx="6" fill="#ffffff" stroke="#e5d9b0" stroke-width="1"/>
+    <text x="560" y="122" font-weight="bold" fill="#8a6a10">소유자 (Owner)</text>
+    <text x="560" y="138" font-size="10" fill="#666666">객체를 소유한 계정</text>
+
+    <rect x="545" y="154" width="400" height="44" rx="6" fill="#ffffff" stroke="#e5d9b0" stroke-width="1"/>
+    <text x="560" y="172" font-weight="bold" fill="#8a6a10">키 (Key)</text>
+    <text x="560" y="188" font-size="10" fill="#666666">파일 이름(경로). 객체를 찾는 기준</text>
+
+    <rect x="545" y="204" width="400" height="44" rx="6" fill="#ffffff" stroke="#e5d9b0" stroke-width="1"/>
+    <text x="560" y="222" font-weight="bold" fill="#8a6a10">값 (Value)</text>
+    <text x="560" y="238" font-size="10" fill="#666666">파일 데이터. 비어 있어도 되므로 0바이트 객체가 가능</text>
+
+    <rect x="545" y="254" width="400" height="44" rx="6" fill="#ffffff" stroke="#e5d9b0" stroke-width="1"/>
+    <text x="560" y="272" font-weight="bold" fill="#8a6a10">버전 ID (Version ID)</text>
+    <text x="560" y="288" font-size="10" fill="#666666">버저닝을 켰을 때 파일의 버전을 구분</text>
+
+    <rect x="545" y="304" width="400" height="44" rx="6" fill="#ffffff" stroke="#e5d9b0" stroke-width="1"/>
+    <text x="560" y="322" font-weight="bold" fill="#8a6a10">메타데이터 (Metadata)</text>
+    <text x="560" y="338" font-size="10" fill="#666666">누가, 언제, 무슨 용도로 만들었는지 등 부가 정보</text>
+
+    <rect x="545" y="354" width="400" height="44" rx="6" fill="#ffffff" stroke="#e5d9b0" stroke-width="1"/>
+    <text x="560" y="372" font-weight="bold" fill="#8a6a10">ACL</text>
+    <text x="560" y="388" font-size="10" fill="#666666">객체 단위 권한. 점점 사용하지 않는 추세</text>
+  </g>
+
+  <text x="745" y="418" font-size="10.5" fill="#8a6a10" text-anchor="middle">객체 크기: 0바이트 ~ 5TB (그 이상은 쪼개서 여러 객체로)</text>
+</svg>

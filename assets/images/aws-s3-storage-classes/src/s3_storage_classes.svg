@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="640" viewBox="0 0 1600 640" font-family="Noto Sans CJK KR, sans-serif">
+<rect width="1600" height="640" fill="#ffffff"/>
+<text x="800" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#222">S3 스토리지 클래스: 자주 쓰는 순서대로</text>
+<text x="40" y="92" font-size="17" font-weight="700" fill="#444">파일 저장용 (즉시 접근)</text>
+<text x="1056" y="92" font-size="17" font-weight="700" fill="#444">아카이브용 (Glacier)</text>
+<line x1="40" y1="100" x2="1022" y2="100" stroke="#bbb"/><line x1="1056" y1="100" x2="1560" y2="100" stroke="#bbb"/>
+<rect x="40" y="116" width="176" height="390" rx="12" fill="#f3eafb" stroke="#7a3db8" stroke-width="2"/>
+<rect x="40" y="116" width="176" height="72" rx="12" fill="#7a3db8"/><rect x="40" y="156" width="176" height="32" fill="#7a3db8"/>
+<text x="128.0" y="148" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Express</text>
+<text x="128.0" y="174" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">One Zone</text>
+<text x="54" y="220" font-size="13" fill="#777">AZ</text>
+<text x="54" y="242" font-size="16" font-weight="700" fill="#222">1개</text>
+<text x="54" y="296" font-size="13" fill="#777">최소 보관</text>
+<text x="54" y="318" font-size="16" font-weight="700" fill="#222">1시간</text>
+<text x="54" y="372" font-size="13" fill="#777">조회</text>
+<text x="54" y="394" font-size="16" font-weight="700" fill="#222">한 자릿수 ms</text>
+<text x="54" y="448" font-size="13" fill="#777">용도</text>
+<text x="54" y="470" font-size="16" font-weight="700" fill="#222">ML·빅데이터</text>
+<rect x="230" y="116" width="176" height="390" rx="12" fill="#e8f7ef" stroke="#1f7a4d" stroke-width="2"/>
+<rect x="230" y="116" width="176" height="72" rx="12" fill="#1f7a4d"/><rect x="230" y="156" width="176" height="32" fill="#1f7a4d"/>
+<text x="318.0" y="159" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Standard</text>
+<text x="244" y="220" font-size="13" fill="#777">AZ</text>
+<text x="244" y="242" font-size="16" font-weight="700" fill="#222">3개 이상</text>
+<text x="244" y="296" font-size="13" fill="#777">최소 보관</text>
+<text x="244" y="318" font-size="16" font-weight="700" fill="#222">없음</text>
+<text x="244" y="372" font-size="13" fill="#777">조회</text>
+<text x="244" y="394" font-size="16" font-weight="700" fill="#222">ms</text>
+<text x="244" y="448" font-size="13" fill="#777">용도</text>
+<text x="244" y="470" font-size="16" font-weight="700" fill="#222">자주 쓰는 데이터</text>
+<rect x="420" y="116" width="176" height="390" rx="12" fill="#e8f7ef" stroke="#1f7a4d" stroke-width="2"/>
+<rect x="420" y="116" width="176" height="72" rx="12" fill="#1f7a4d"/><rect x="420" y="156" width="176" height="32" fill="#1f7a4d"/>
+<text x="508.0" y="148" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Intelligent-</text>
+<text x="508.0" y="174" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Tiering</text>
+<text x="434" y="220" font-size="13" fill="#777">AZ</text>
+<text x="434" y="242" font-size="16" font-weight="700" fill="#222">3개 이상</text>
+<text x="434" y="296" font-size="13" fill="#777">최소 보관</text>
+<text x="434" y="318" font-size="16" font-weight="700" fill="#222">없음</text>
+<text x="434" y="372" font-size="13" fill="#777">조회</text>
+<text x="434" y="394" font-size="16" font-weight="700" fill="#222">ms (자동 이동)</text>
+<text x="434" y="448" font-size="13" fill="#777">용도</text>
+<text x="434" y="470" font-size="16" font-weight="700" fill="#222">패턴을 모를 때</text>
+<rect x="610" y="116" width="176" height="390" rx="12" fill="#eaf2fb" stroke="#2f6fb5" stroke-width="2"/>
+<rect x="610" y="116" width="176" height="72" rx="12" fill="#2f6fb5"/><rect x="610" y="156" width="176" height="32" fill="#2f6fb5"/>
+<text x="698.0" y="159" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Standard-IA</text>
+<text x="624" y="220" font-size="13" fill="#777">AZ</text>
+<text x="624" y="242" font-size="16" font-weight="700" fill="#222">3개 이상</text>
+<text x="624" y="296" font-size="13" fill="#777">최소 보관</text>
+<text x="624" y="318" font-size="16" font-weight="700" fill="#222">30일</text>
+<text x="624" y="372" font-size="13" fill="#777">조회</text>
+<text x="624" y="394" font-size="16" font-weight="700" fill="#222">ms + 조회 요금</text>
+<text x="624" y="448" font-size="13" fill="#777">용도</text>
+<text x="624" y="470" font-size="16" font-weight="700" fill="#222">드물게 쓰는</text>
+<text x="624" y="492" font-size="16" font-weight="700" fill="#222">중요 데이터</text>
+<rect x="800" y="116" width="176" height="390" rx="12" fill="#eaf2fb" stroke="#2f6fb5" stroke-width="2"/>
+<rect x="800" y="116" width="176" height="72" rx="12" fill="#2f6fb5"/><rect x="800" y="156" width="176" height="32" fill="#2f6fb5"/>
+<text x="888.0" y="159" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">One Zone-IA</text>
+<text x="814" y="220" font-size="13" fill="#777">AZ</text>
+<text x="814" y="242" font-size="16" font-weight="700" fill="#222">1개</text>
+<text x="814" y="296" font-size="13" fill="#777">최소 보관</text>
+<text x="814" y="318" font-size="16" font-weight="700" fill="#222">30일</text>
+<text x="814" y="372" font-size="13" fill="#777">조회</text>
+<text x="814" y="394" font-size="16" font-weight="700" fill="#222">ms + 조회 요금</text>
+<text x="814" y="448" font-size="13" fill="#777">용도</text>
+<text x="814" y="470" font-size="16" font-weight="700" fill="#222">다시 만들 수</text>
+<text x="814" y="492" font-size="16" font-weight="700" fill="#222">있는 데이터</text>
+<rect x="1006" y="116" width="176" height="390" rx="12" fill="#fdf5dc" stroke="#b8860b" stroke-width="2"/>
+<rect x="1006" y="116" width="176" height="72" rx="12" fill="#b8860b"/><rect x="1006" y="156" width="176" height="32" fill="#b8860b"/>
+<text x="1094.0" y="148" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Glacier</text>
+<text x="1094.0" y="174" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Instant</text>
+<text x="1020" y="220" font-size="13" fill="#777">AZ</text>
+<text x="1020" y="242" font-size="16" font-weight="700" fill="#222">3개 이상</text>
+<text x="1020" y="296" font-size="13" fill="#777">최소 보관</text>
+<text x="1020" y="318" font-size="16" font-weight="700" fill="#222">90일</text>
+<text x="1020" y="372" font-size="13" fill="#777">조회</text>
+<text x="1020" y="394" font-size="16" font-weight="700" fill="#222">ms</text>
+<text x="1020" y="448" font-size="13" fill="#777">용도</text>
+<text x="1020" y="470" font-size="16" font-weight="700" fill="#222">의료 영상·</text>
+<text x="1020" y="492" font-size="16" font-weight="700" fill="#222">뉴스 아카이브</text>
+<rect x="1196" y="116" width="176" height="390" rx="12" fill="#fdf5dc" stroke="#b8860b" stroke-width="2"/>
+<rect x="1196" y="116" width="176" height="72" rx="12" fill="#b8860b"/><rect x="1196" y="156" width="176" height="32" fill="#b8860b"/>
+<text x="1284.0" y="148" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Glacier</text>
+<text x="1284.0" y="174" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Flexible</text>
+<text x="1210" y="220" font-size="13" fill="#777">AZ</text>
+<text x="1210" y="242" font-size="16" font-weight="700" fill="#222">3개 이상</text>
+<text x="1210" y="296" font-size="13" fill="#777">최소 보관</text>
+<text x="1210" y="318" font-size="16" font-weight="700" fill="#222">90일</text>
+<text x="1210" y="372" font-size="13" fill="#777">조회</text>
+<text x="1210" y="394" font-size="16" font-weight="700" fill="#222">분~시간</text>
+<text x="1210" y="448" font-size="13" fill="#777">용도</text>
+<text x="1210" y="470" font-size="16" font-weight="700" fill="#222">백업·재해 복구</text>
+<rect x="1386" y="116" width="176" height="390" rx="12" fill="#fdf5dc" stroke="#b8860b" stroke-width="2"/>
+<rect x="1386" y="116" width="176" height="72" rx="12" fill="#b8860b"/><rect x="1386" y="156" width="176" height="32" fill="#b8860b"/>
+<text x="1474.0" y="148" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Glacier</text>
+<text x="1474.0" y="174" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">Deep Archive</text>
+<text x="1400" y="220" font-size="13" fill="#777">AZ</text>
+<text x="1400" y="242" font-size="16" font-weight="700" fill="#222">3개 이상</text>
+<text x="1400" y="296" font-size="13" fill="#777">최소 보관</text>
+<text x="1400" y="318" font-size="16" font-weight="700" fill="#222">180일</text>
+<text x="1400" y="372" font-size="13" fill="#777">조회</text>
+<text x="1400" y="394" font-size="16" font-weight="700" fill="#222">12~48시간</text>
+<text x="1400" y="448" font-size="13" fill="#777">용도</text>
+<text x="1400" y="470" font-size="16" font-weight="700" fill="#222">법적 장기 보관</text>
+<defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#666"/></marker></defs>
+<line x1="60" y1="548" x2="1540" y2="548" stroke="#666" stroke-width="3" marker-end="url(#a)"/>
+<text x="60" y="582" font-size="16" fill="#444">저장 비용 높음 · 꺼내기 빠름</text>
+<text x="1540" y="582" text-anchor="end" font-size="16" fill="#444">저장 비용 낮음 · 꺼내기 느리거나 조회 요금 발생</text>
+<text x="800" y="620" text-anchor="middle" font-size="14" fill="#777">내구성은 모든 클래스가 11 나인(One Zone 계열은 단일 AZ 내) · 최소 보관 기간 전에 지워도 그 기간만큼 과금</text>
+</svg>

@@ -17,7 +17,7 @@ permalink: /about/
 .ab-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; }
 .ab-card { border:1px solid var(--ab-line); border-radius:12px; padding:16px 18px; background:#fff; }
 .ab-card .tag { font-size:.75rem; color:var(--ab-accent); font-weight:600; }
-.ab-card h3 { font-size:1.02rem; margin:.2rem 0 .5rem; }
+.ab-card h3 { font-size:1.05rem; font-weight:700; margin:.2rem 0 .5rem; }
 .ab-card p { font-size:.9rem; line-height:1.65; color:var(--ab-sub); margin:0 0 .5rem; }
 .ab-card ul { margin:.3rem 0 0 1.1rem; padding:0; font-size:.88rem; line-height:1.65; color:#33404f; }
 .ab-card { display:flex; flex-direction:column; }
@@ -44,11 +44,11 @@ permalink: /about/
   </ul>
 </div>
 
-## 요즘 하는 것
+<h2>요즘 하는 것</h2>
 
-쿠버네티스 강의를 정리한 뒤, 지금은 AWS 기초(VPC, 보안 그룹, S3 등)를 같은 방식으로 정리하고 있습니다. 강의 내용을 그대로 옮기기보다 최신 문서와 대조해 틀린 부분은 바로잡고, 직접 그린 구성도를 함께 넣는 것을 원칙으로 합니다. 글은 [Kubernetes]({{ '/kubernetes/' | relative_url }})와 [AWS]({{ '/aws/' | relative_url }}) 탭에 모여 있습니다.
+<p>쿠버네티스 강의를 정리한 뒤, 지금은 AWS 기초(VPC, 보안 그룹, S3 등)를 같은 방식으로 정리하고 있습니다. 강의 내용을 그대로 옮기기보다 최신 문서와 대조해 틀린 부분은 바로잡고, 직접 그린 구성도를 함께 넣는 것을 원칙으로 합니다. 글은 <a href="{{ '/kubernetes/' | relative_url }}">Kubernetes</a>와 <a href="{{ '/aws/' | relative_url }}">AWS</a> 탭에 모여 있습니다.</p>
 
-## 프로젝트
+<h2>프로젝트</h2>
 
 <div class="ab-cards">
   <div class="ab-card">
@@ -86,7 +86,7 @@ permalink: /about/
   </div>
 </div>
 
-## 자격과 교육
+<h2>자격과 교육</h2>
 
 <ul class="ab-tl">
   <li><span class="when">2026.01</span><span>AWS Certified Solutions Architect – Associate (SAA-C03)</span></li>
@@ -97,7 +97,7 @@ permalink: /about/
   <li><span class="when">학력</span><span>컴퓨터공학 전공</span></li>
 </ul>
 
-## 기술 스택
+<h2>기술 스택</h2>
 
 <div class="ab-stack">
   <span class="k">Cloud</span>
@@ -110,7 +110,7 @@ permalink: /about/
   <ul class="ab-chips"><li>Prometheus</li><li>Grafana</li></ul>
 </div>
 
-## 연락
+<h2>연락</h2>
 
 <div class="ab-links">
   <a href="https://github.com/Hyunwo">GitHub ↗</a>

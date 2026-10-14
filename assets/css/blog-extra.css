@@ -1,0 +1,96 @@
+/* 블로그 보강 스타일: 글 목록 카드, 본문 가독성, 표/이미지, 페이지 번호, 목차, 이전/다음 글 */
+html { scroll-behavior: smooth; }
+
+/* ── 글 목록: 카드형으로 간격 확보 ── */
+.post-list { margin-left: 0; padding-left: 0; list-style: none; }
+.post-list > li {
+  margin: 0 0 14px;
+  padding: 18px 22px;
+  border: 1px solid #e4e8ee;
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.post-list > li:hover {
+  border-color: var(--accent, #2f6fb5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+  transform: translateY(-1px);
+}
+.post-list > li .post-meta { font-size: 13px; color: #8a94a3; }
+.post-list > li h3 { margin: .25rem 0 .4rem; font-size: 1.15rem; line-height: 1.45; }
+.post-list > li .post-link { text-decoration: none; }
+.post-desc { margin: 0; font-size: 14px; line-height: 1.65; color: #5a6270; }
+.post-cat {
+  display: inline-block; margin-left: 8px; padding: 1px 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: .03em;
+  border-radius: 999px; background: #eef4fb; color: #1d4a6b; vertical-align: 1px;
+}
+
+/* ── 페이지 번호 ── */
+.pager { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin: 2rem 0 1rem; }
+.pager a {
+  min-width: 36px; padding: 7px 10px; text-align: center;
+  border: 1px solid #dde2ea; border-radius: 8px;
+  color: #4a4a4a; text-decoration: none; font-size: 14px;
+}
+.pager a:hover { border-color: var(--accent, #2f6fb5); }
+.pager a.active { background: var(--accent, #2f6fb5); border-color: var(--accent, #2f6fb5); color: #fff; font-weight: 700; }
+
+/* ── 글 본문 가독성 ── */
+.post-content { line-height: 1.85; }
+.post-content p { margin-bottom: 1.05rem; }
+.post-content h2 {
+  margin: 2.6rem 0 1rem; padding-bottom: .45rem;
+  border-bottom: 1px solid #e4e8ee; letter-spacing: -.01em;
+}
+.post-content h3 { margin: 1.8rem 0 .7rem; }
+.post-content img {
+  display: block; max-width: 100%; height: auto;
+  margin: 1.4rem auto; border: 1px solid #e4e8ee; border-radius: 10px;
+}
+.post-content blockquote {
+  margin: 1.4rem 0; padding: 12px 18px;
+  border-left: 4px solid var(--accent, #2f6fb5); background: #f6f8fb;
+  color: #4a5361; font-size: 15px;
+}
+.post-content blockquote p:last-child { margin-bottom: 0; }
+.post-content code { padding: 2px 6px; border-radius: 4px; background: #f1f3f6; font-size: .9em; }
+.post-content pre code { padding: 0; background: none; }
+
+/* ── 표: 모바일에서 가로 스크롤 ── */
+.post-content table {
+  display: block; max-width: 100%; overflow-x: auto;
+  border-collapse: collapse; margin: 1.4rem 0; font-size: 15px;
+}
+.post-content th, .post-content td { padding: 9px 14px; border: 1px solid #e4e8ee; white-space: normal; min-width: 90px; vertical-align: top; }
+.post-content thead th { background: #f6f8fb; text-align: left; }
+.post-content tbody tr:nth-child(even) { background: #fbfcfd; }
+
+/* ── 글 상단: 읽는 시간, 목차 ── */
+.reading-time { margin-left: 8px; color: #8a94a3; }
+.toc {
+  margin: 1.4rem 0 2rem; padding: 16px 20px;
+  background: #f6f8fb; border: 1px solid #e4e8ee; border-radius: 12px; font-size: 15px;
+}
+.toc strong { display: block; margin-bottom: 8px; font-size: 14px; color: #5a6270; }
+.toc ol { margin: 0 0 0 1.2rem; padding: 0; }
+.toc li { margin: 3px 0; }
+.toc a { text-decoration: none; }
+
+/* ── 같은 카테고리 이전/다음 글 ── */
+.post-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 3rem 0 1rem; }
+.post-nav a {
+  display: block; padding: 14px 16px; border: 1px solid #e4e8ee; border-radius: 12px;
+  text-decoration: none; color: #333; line-height: 1.5;
+}
+.post-nav a:hover { border-color: var(--accent, #2f6fb5); }
+.post-nav small { display: block; margin-bottom: 4px; color: #8a94a3; }
+.post-nav .next { text-align: right; grid-column: 2; }
+.post-nav .prev { grid-column: 1; }
+.post-back { margin-top: 1rem; font-size: 14px; }
+
+@media (max-width: 600px) {
+  .post-list > li { padding: 15px 16px; }
+  .post-nav { grid-template-columns: 1fr; }
+  .post-nav .next, .post-nav .prev { grid-column: 1; text-align: left; }
+}

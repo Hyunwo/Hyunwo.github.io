@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{%- assign cat = page.categories | first -%}
+{%- if cat -%}
+  {%- assign series = site.categories[cat] | sort: 'date' -%}
+  {%- assign idx = -1 -%}
+  {%- for p in series -%}{%- if p.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+  {%- assign prev_idx = idx | minus: 1 -%}
+  {%- assign next_idx = idx | plus: 1 -%}
+  {%- if idx > 0 -%}{%- assign prev_post = series[prev_idx] -%}{%- endif -%}
+  {%- if idx >= 0 and next_idx < series.size -%}{%- assign next_post = series[next_idx] -%}{%- endif -%}
+{%- endif -%}
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y년 %-m월 %-d일" }}</time>
+      {%- if cat %}<span class="post-cat">{{ cat | upcase }}</span>{% endif -%}
+      <span class="reading-time" id="reading-time"></span>
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if prev_post or next_post %}
+  <nav class="post-nav" aria-label="이전/다음 글">
+    {%- if prev_post %}<a class="prev" href="{{ prev_post.url | relative_url }}"><small>← 이전 글</small>{{ prev_post.title | escape }}</a>{% endif -%}
+    {%- if next_post %}<a class="next" href="{{ next_post.url | relative_url }}"><small>다음 글 →</small>{{ next_post.title | escape }}</a>{% endif -%}
+  </nav>
+  {%- endif %}
+  {%- if cat %}<p class="post-back"><a href="{{ '/' | append: cat | append: '/' | relative_url }}">← {{ cat | capitalize }} 글 목록</a></p>{% endif %}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+
+<script>
+(function () {
+  var c = document.querySelector('.post-content');
+  if (!c) return;
+  // 읽는 시간 (한글 기준 분당 약 500자)
+  var min = Math.max(1, Math.round(c.textContent.replace(/\s+/g, '').length / 500));
+  var rt = document.getElementById('reading-time');
+  if (rt) rt.textContent = '· 약 ' + min + '분';
+  // 목차 (h2가 3개 이상일 때만)
+  var hs = c.querySelectorAll('h2');
+  if (hs.length < 3) return;
+  var toc = document.createElement('div');
+  toc.className = 'toc';
+  var html = '<strong>이 글의 목차</strong><ol>';
+  hs.forEach(function (h, i) {
+    if (!h.id) h.id = 'sec-' + (i + 1);
+    html += '<li><a href="#' + h.id + '">' + h.textContent + '</a></li>';
+  });
+  toc.innerHTML = html + '</ol>';
+  hs[0].parentNode.insertBefore(toc, hs[0]);
+})();
+</script>

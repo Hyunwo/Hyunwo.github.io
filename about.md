@@ -20,6 +20,9 @@ permalink: /about/
 .ab-card h3 { font-size:1.02rem; margin:.2rem 0 .5rem; }
 .ab-card p { font-size:.9rem; line-height:1.65; color:var(--ab-sub); margin:0 0 .5rem; }
 .ab-card ul { margin:.3rem 0 0 1.1rem; padding:0; font-size:.88rem; line-height:1.65; color:#33404f; }
+.ab-card { display:flex; flex-direction:column; }
+.ab-card .more { margin-top:auto; padding-top:12px; font-size:.85rem; font-weight:600; text-decoration:none; color:var(--ab-accent); }
+.ab-card .more:hover { text-decoration:underline; }
 .ab-tl { list-style:none; margin:0; padding:0; }
 .ab-tl li { display:flex; gap:16px; padding:9px 0; border-bottom:1px dashed var(--ab-line); font-size:.95rem; }
 .ab-tl .when { flex:0 0 84px; color:var(--ab-sub); font-size:.85rem; padding-top:2px; }
@@ -58,6 +61,7 @@ permalink: /about/
       <li>GitHub Actions → ArgoCD 배포 파이프라인</li>
       <li>EC2 스케줄러로 비용 약 76~79% 절감</li>
     </ul>
+    <a class="more" href="https://github.com/Hyunwo/pop-con-infra">GitHub 레포 보기 ↗</a>
   </div>
   <div class="ab-card">
     <span class="tag">새싹 클라우드 아키텍트 · 팀 5명</span>
@@ -68,6 +72,7 @@ permalink: /about/
       <li>리전별 tfvars로 멀티 리전(서울·도쿄) 배포</li>
       <li>VPC·서브넷 등 전체 구조 설계 참여</li>
     </ul>
+    <a class="more" href="https://github.com/Hyunwo/ticketaka-infra">GitHub 레포 보기 ↗</a>
   </div>
   <div class="ab-card">
     <span class="tag">새싹 중간 프로젝트 · 약 1개월</span>
@@ -108,7 +113,7 @@ permalink: /about/
 ## 연락
 
 <div class="ab-links">
-  <a href="https://github.com/{{ site.github_username }}">GitHub ↗</a>
+  <a href="https://github.com/Hyunwo">GitHub ↗</a>
 </div>
 
 </div>

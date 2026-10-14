@@ -30,13 +30,13 @@ title: 정현우 | Cloud Infra Log
 <ul class="post-list" id="home-post-list">
 {% for post in posts %}
   <li>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <span class="post-meta">{{ post.date | date: "%Y.%m.%d" }}</span><span class="post-cat">{{ post.categories | first | upcase }}</span>
     <h3>
       <a class="post-link" href="{{ post.url | relative_url }}">
         {{ post.title | escape }}
       </a>
     </h3>
-    {% if post.description %}<p style="margin:4px 0 0; font-size:14px; color:#5a5a5a;">{{ post.description }}</p>{% elsif site.show_excerpts %}{{ post.excerpt }}{% endif %}
+    {% if post.description %}<p class="post-desc">{{ post.description }}</p>{% elsif site.show_excerpts %}{{ post.excerpt }}{% endif %}
   </li>
 {% endfor %}
 </ul>

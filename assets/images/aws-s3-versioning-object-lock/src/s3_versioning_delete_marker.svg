@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700" font-family="Noto Sans CJK KR, sans-serif"><rect width="1600" height="700" fill="#fff"/>
+<text x="800" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#222">버전 관리: 삭제해도 이전 버전은 남아 있다 (key: test.jpg)</text>
+<defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#888"/></marker></defs>
+<text x="225.0" y="100" text-anchor="middle" font-size="20" font-weight="700" fill="#2f6fb5">① 최초 업로드</text>
+<rect x="40" y="120" width="370" height="330" rx="14" fill="#f6f8fb" stroke="#d5dbe4" stroke-width="2"/>
+<text x="56" y="148" font-size="14" fill="#777">버킷 안의 객체 버전</text>
+<rect x="64" y="164" width="322" height="76" rx="10" fill="#fff" stroke="#1f7a4d" stroke-width="3"/>
+<text x="84" y="198" font-size="19" font-weight="700" fill="#222">test.jpg</text><text x="84" y="222" font-size="14" fill="#666">버전 ID 11111 · 최신 버전</text>
+<line x1="225.0" y1="456" x2="225.0" y2="492" stroke="#888" stroke-width="3" marker-end="url(#a)"/>
+<text x="225.0" y="516" text-anchor="middle" font-size="14" fill="#777">사용자에게 보이는 결과</text>
+<rect x="50" y="528" width="350" height="56" rx="10" fill="#fff" stroke="#1f7a4d" stroke-width="2.5"/>
+<text x="225.0" y="563" text-anchor="middle" font-size="18" font-weight="700" fill="#1f7a4d">test.jpg (11111)</text>
+<text x="615.0" y="100" text-anchor="middle" font-size="20" font-weight="700" fill="#2f6fb5">② 파일 업데이트</text>
+<rect x="430" y="120" width="370" height="330" rx="14" fill="#f6f8fb" stroke="#d5dbe4" stroke-width="2"/>
+<text x="446" y="148" font-size="14" fill="#777">버킷 안의 객체 버전</text>
+<rect x="454" y="164" width="322" height="76" rx="10" fill="#fff" stroke="#1f7a4d" stroke-width="3"/>
+<text x="474" y="198" font-size="19" font-weight="700" fill="#222">test.jpg</text><text x="474" y="222" font-size="14" fill="#666">버전 ID 22222 · 최신 버전</text>
+<rect x="454" y="256" width="322" height="76" rx="10" fill="#fff" stroke="#b9c2cf" stroke-width="2"/>
+<text x="474" y="290" font-size="19" font-weight="700" fill="#222">test.jpg</text><text x="474" y="314" font-size="14" fill="#666">버전 ID 11111</text>
+<line x1="615.0" y1="456" x2="615.0" y2="492" stroke="#888" stroke-width="3" marker-end="url(#a)"/>
+<text x="615.0" y="516" text-anchor="middle" font-size="14" fill="#777">사용자에게 보이는 결과</text>
+<rect x="440" y="528" width="350" height="56" rx="10" fill="#fff" stroke="#1f7a4d" stroke-width="2.5"/>
+<text x="615.0" y="563" text-anchor="middle" font-size="18" font-weight="700" fill="#1f7a4d">test.jpg (22222)</text>
+<text x="1005.0" y="100" text-anchor="middle" font-size="20" font-weight="700" fill="#2f6fb5">③ 파일 삭제</text>
+<rect x="820" y="120" width="370" height="330" rx="14" fill="#f6f8fb" stroke="#d5dbe4" stroke-width="2"/>
+<text x="836" y="148" font-size="14" fill="#777">버킷 안의 객체 버전</text>
+<rect x="844" y="164" width="322" height="76" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="3" stroke-dasharray="8 5"/>
+<text x="864" y="198" font-size="19" font-weight="700" fill="#c0392b">삭제 마커</text><text x="864" y="222" font-size="14" fill="#a33">Delete Marker · 최신 버전</text>
+<rect x="844" y="256" width="322" height="76" rx="10" fill="#fff" stroke="#b9c2cf" stroke-width="2"/>
+<text x="864" y="290" font-size="19" font-weight="700" fill="#222">test.jpg</text><text x="864" y="314" font-size="14" fill="#666">버전 ID 22222</text>
+<rect x="844" y="348" width="322" height="76" rx="10" fill="#fff" stroke="#b9c2cf" stroke-width="2"/>
+<text x="864" y="382" font-size="19" font-weight="700" fill="#222">test.jpg</text><text x="864" y="406" font-size="14" fill="#666">버전 ID 11111</text>
+<line x1="1005.0" y1="456" x2="1005.0" y2="492" stroke="#888" stroke-width="3" marker-end="url(#a)"/>
+<text x="1005.0" y="516" text-anchor="middle" font-size="14" fill="#777">사용자에게 보이는 결과</text>
+<rect x="830" y="528" width="350" height="56" rx="10" fill="#fff" stroke="#c0392b" stroke-width="2.5"/>
+<text x="1005.0" y="563" text-anchor="middle" font-size="18" font-weight="700" fill="#c0392b">삭제된 것처럼 보임 (404)</text>
+<text x="1395.0" y="100" text-anchor="middle" font-size="20" font-weight="700" fill="#2f6fb5">④ 삭제 마커 제거</text>
+<rect x="1210" y="120" width="370" height="330" rx="14" fill="#f6f8fb" stroke="#d5dbe4" stroke-width="2"/>
+<text x="1226" y="148" font-size="14" fill="#777">버킷 안의 객체 버전</text>
+<rect x="1234" y="164" width="322" height="76" rx="10" fill="#fff" stroke="#1f7a4d" stroke-width="3"/>
+<text x="1254" y="198" font-size="19" font-weight="700" fill="#222">test.jpg</text><text x="1254" y="222" font-size="14" fill="#666">버전 ID 22222 · 최신 버전</text>
+<rect x="1234" y="256" width="322" height="76" rx="10" fill="#fff" stroke="#b9c2cf" stroke-width="2"/>
+<text x="1254" y="290" font-size="19" font-weight="700" fill="#222">test.jpg</text><text x="1254" y="314" font-size="14" fill="#666">버전 ID 11111</text>
+<line x1="1395.0" y1="456" x2="1395.0" y2="492" stroke="#888" stroke-width="3" marker-end="url(#a)"/>
+<text x="1395.0" y="516" text-anchor="middle" font-size="14" fill="#777">사용자에게 보이는 결과</text>
+<rect x="1220" y="528" width="350" height="56" rx="10" fill="#fff" stroke="#1f7a4d" stroke-width="2.5"/>
+<text x="1395.0" y="563" text-anchor="middle" font-size="18" font-weight="700" fill="#1f7a4d">test.jpg (22222) 복원</text>
+<text x="800" y="640" text-anchor="middle" font-size="17" fill="#444">③에서도 v 22222와 v 11111은 그대로 저장되어 있어 저장 비용이 계속 나온다.</text>
+<text x="800" y="670" text-anchor="middle" font-size="15" fill="#888">완전히 지우려면 삭제 마커를 포함한 모든 버전을 버전 ID를 지정해 영구 삭제해야 한다.</text>
+</svg>

@@ -27,7 +27,7 @@ html { scroll-behavior: smooth; }
 }
 
 /* ── 페이지 번호 ── */
-.pager { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin: 2rem 0 1rem; }
+.pager { display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; margin: 2.5rem 0 3rem; }
 .pager a {
   min-width: 36px; padding: 7px 10px; text-align: center;
   border: 1px solid #dde2ea; border-radius: 8px;

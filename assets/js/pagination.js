@@ -11,6 +11,7 @@ function initPagination(listId, perPage) {
 
   var nav = document.createElement('nav');
   nav.className = 'pager';
+  nav.style.cssText = 'display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:8px; margin:2.5rem 0 3rem; text-align:center;';
   nav.setAttribute('aria-label', '페이지');
   list.insertAdjacentElement('afterend', nav);
 
@@ -21,7 +22,11 @@ function initPagination(listId, perPage) {
     var a = document.createElement('a');
     a.href = '#page=' + page;
     a.textContent = label;
-    if (page === currentPage && /^\d+$/.test(label)) a.className = 'active';
+    a.style.cssText = 'display:inline-block; min-width:38px; padding:8px 12px; text-align:center; border:1px solid #dde2ea; border-radius:8px; text-decoration:none; font-size:14px; color:#4a4a4a;';
+    if (page === currentPage && /^\d+$/.test(label)) {
+      a.className = 'active';
+      a.style.cssText += ' background:#2f6fb5; border-color:#2f6fb5; color:#fff; font-weight:700;';
+    }
     a.addEventListener('click', function (e) {
       e.preventDefault();
       currentPage = page;

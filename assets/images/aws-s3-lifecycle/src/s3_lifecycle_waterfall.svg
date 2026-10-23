@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="660" viewBox="0 0 1600 660" font-family="Noto Sans CJK KR, sans-serif"><rect width="1600" height="660" fill="#fff"/>
+<text x="800.0" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#222">전환 작업은 폭포수처럼 아래로만 흐른다</text>
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#777"/></marker><marker id="r" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#c0392b"/></marker></defs>
+<rect x="50" y="100" width="190" height="64" rx="12" fill="#fff" stroke="#1f7a4d" stroke-width="3"/>
+<text x="145.0" y="139" text-anchor="middle" font-size="17" font-weight="700" fill="#1f7a4d">Standard</text>
+<rect x="265" y="158" width="190" height="64" rx="12" fill="#fff" stroke="#2f6fb5" stroke-width="3"/>
+<text x="360.0" y="197" text-anchor="middle" font-size="17" font-weight="700" fill="#2f6fb5">Standard-IA</text>
+<rect x="480" y="216" width="190" height="64" rx="12" fill="#fff" stroke="#1f7a4d" stroke-width="3"/>
+<text x="575.0" y="255" text-anchor="middle" font-size="17" font-weight="700" fill="#1f7a4d">Intelligent-Tiering</text>
+<rect x="695" y="274" width="190" height="64" rx="12" fill="#fff" stroke="#2f6fb5" stroke-width="3"/>
+<text x="790.0" y="313" text-anchor="middle" font-size="17" font-weight="700" fill="#2f6fb5">One Zone-IA</text>
+<rect x="910" y="332" width="190" height="64" rx="12" fill="#fff" stroke="#b8860b" stroke-width="3"/>
+<text x="1005.0" y="371" text-anchor="middle" font-size="17" font-weight="700" fill="#b8860b">Glacier Instant</text>
+<rect x="1125" y="390" width="190" height="64" rx="12" fill="#fff" stroke="#b8860b" stroke-width="3"/>
+<text x="1220.0" y="429" text-anchor="middle" font-size="17" font-weight="700" fill="#b8860b">Glacier Flexible</text>
+<rect x="1340" y="448" width="190" height="64" rx="12" fill="#fff" stroke="#b8860b" stroke-width="3"/>
+<text x="1435.0" y="487" text-anchor="middle" font-size="17" font-weight="700" fill="#b8860b">Glacier Deep Archive</text>
+<path d="M330,100 L1250,330" stroke="#9aa3b0" stroke-width="6" fill="none" marker-end="url(#a)"/>
+<text x="690" y="168" text-anchor="middle" font-size="18" font-weight="700" fill="#6b7585" transform="rotate(14 690 168)">아래(아카이브) 방향으로만 전환</text>
+<path d="M1435,514 L1435,545 L145,545 L145,170" stroke="#c0392b" stroke-width="3" stroke-dasharray="9 6" fill="none" marker-end="url(#r)"/>
+<rect x="420" y="470" width="360" height="46" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="2"/><text x="600" y="500" text-anchor="middle" font-size="18" font-weight="700" fill="#c0392b">위쪽(되돌리기)으로는 전환 불가</text>
+<text x="800" y="596" text-anchor="middle" font-size="17" fill="#444">어떤 클래스로 직접 전환할 수 있는지는 클래스마다 다르다 (본문의 전환 표 참고).</text>
+<text x="800" y="628" text-anchor="middle" font-size="15" fill="#888">위로 되돌리려면 수명 주기가 아니라 객체를 복사(Copy)해야 한다. Deep Archive는 복원 후 복사가 필요하다.</text></svg>

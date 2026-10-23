@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="540" viewBox="0 0 1600 540" font-family="Noto Sans CJK KR, sans-serif"><rect width="1600" height="540" fill="#fff"/>
+<text x="800.0" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#222">수명 주기 규칙 예시: 로그 버킷 (prefix: logs/)</text>
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#777"/></marker><marker id="r" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#c0392b"/></marker></defs>
+<rect x="60" y="130" width="350" height="170" rx="14" fill="#e8f7ef" stroke="#1f7a4d" stroke-width="3"/>
+<text x="235.0" y="178" text-anchor="middle" font-size="19" fill="#555">0일 ~ 30일</text>
+<text x="235.0" y="224" text-anchor="middle" font-size="26" font-weight="700" fill="#1f7a4d">Standard</text>
+<text x="235.0" y="266" text-anchor="middle" font-size="16" fill="#666">자주 확인하는 기간</text>
+<line x1="414" y1="215" x2="446" y2="215" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+<text x="430.0" y="196" text-anchor="middle" font-size="14" fill="#777">전환</text>
+<rect x="450" y="130" width="350" height="170" rx="14" fill="#eaf2fb" stroke="#2f6fb5" stroke-width="3"/>
+<text x="625.0" y="178" text-anchor="middle" font-size="19" fill="#555">30일 ~ 90일</text>
+<text x="625.0" y="224" text-anchor="middle" font-size="26" font-weight="700" fill="#2f6fb5">Standard-IA</text>
+<text x="625.0" y="266" text-anchor="middle" font-size="16" fill="#666">가끔 확인하는 기간</text>
+<line x1="804" y1="215" x2="836" y2="215" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+<text x="820.0" y="196" text-anchor="middle" font-size="14" fill="#777">전환</text>
+<rect x="840" y="130" width="350" height="170" rx="14" fill="#fdf5dc" stroke="#b8860b" stroke-width="3"/>
+<text x="1015.0" y="178" text-anchor="middle" font-size="19" fill="#555">90일 ~ 365일</text>
+<text x="1015.0" y="224" text-anchor="middle" font-size="26" font-weight="700" fill="#b8860b">Glacier Flexible</text>
+<text x="1015.0" y="266" text-anchor="middle" font-size="16" fill="#666">백업·감사용 보관</text>
+<line x1="1194" y1="215" x2="1226" y2="215" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+<text x="1210.0" y="196" text-anchor="middle" font-size="14" fill="#777">만료</text>
+<rect x="1230" y="130" width="350" height="170" rx="14" fill="#fdecea" stroke="#c0392b" stroke-width="3"/>
+<text x="1405.0" y="178" text-anchor="middle" font-size="19" fill="#555">365일 이후</text>
+<text x="1405.0" y="224" text-anchor="middle" font-size="26" font-weight="700" fill="#c0392b">삭제 (만료)</text>
+<text x="1405.0" y="266" text-anchor="middle" font-size="16" fill="#666">객체 삭제</text>
+<rect x="60" y="340" width="1480" height="140" rx="12" fill="#f6f8fb" stroke="#d5dbe4" stroke-width="2"/>
+<text x="86" y="376" font-size="16" fill="#333">· 기준 시점은 규칙을 만든 날이 아니라 객체가 생성된 날 (기존 객체에도 소급 적용)</text>
+<text x="86" y="404" font-size="16" fill="#333">· 필터: 접두사(logs/), 태그, 객체 크기로 적용 대상을 좁힐 수 있다</text>
+<text x="86" y="432" font-size="16" fill="#333">· 버전 관리 버킷이면 이전 버전 만료·보관 개수 제한을 별도 규칙으로 설정</text>
+<text x="86" y="460" font-size="16" fill="#333">· 완료되지 않은 멀티파트 업로드 정리 규칙도 함께 두는 것이 안전하다</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700" font-family="Noto Sans CJK KR, sans-serif"><rect width="1600" height="700" fill="#fff"/>
+<text x="800" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#222">S3 암호화의 세 단계: 전송 중 · 저장 시(서버 사이드) · 클라이언트 사이드</text>
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#2f6fb5"/></marker><marker id="g" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#7a3db8"/></marker></defs>
+<rect x="40" y="150" width="340" height="420" rx="16" fill="#f4f4f4" stroke="#9a9a9a" stroke-width="3"/>
+<text x="210" y="190" text-anchor="middle" font-size="21" font-weight="700" fill="#333">클라이언트 (사용자·앱)</text>
+<rect x="70" y="250" width="280" height="130" rx="12" fill="#fdf5dc" stroke="#b8860b" stroke-width="3"/>
+<text x="210" y="296" text-anchor="middle" font-size="19" font-weight="700" fill="#8a6508">③ 클라이언트 사이드 암호화</text>
+<text x="210" y="326" text-anchor="middle" font-size="15" fill="#6b5207">업로드 전에 직접 암호화</text>
+<text x="210" y="352" text-anchor="middle" font-size="15" fill="#6b5207">S3는 암호화 여부를 알지 못함</text>
+<text x="210" y="440" text-anchor="middle" font-size="15" fill="#666">(S3 Encryption Client 등 사용)</text>
+<line x1="388" y1="315" x2="552" y2="315" stroke="#2f6fb5" stroke-width="5" marker-end="url(#a)"/>
+<text x="470" y="272" text-anchor="middle" font-size="18" font-weight="700" fill="#2f6fb5">① 전송 중</text>
+<text x="470" y="296" text-anchor="middle" font-size="15" fill="#2f6fb5">HTTPS / TLS</text>
+<rect x="560" y="90" width="720" height="500" rx="16" fill="#e8f7ef" stroke="#1f7a4d" stroke-width="3"/>
+<text x="920" y="130" text-anchor="middle" font-size="21" font-weight="700" fill="#1f7a4d">Amazon S3</text>
+<text x="920" y="162" text-anchor="middle" font-size="18" font-weight="700" fill="#1f7a4d">② 서버 사이드 암호화 (저장 시, At Rest)</text>
+<rect x="590" y="190" width="660" height="68" rx="12" fill="#fff" stroke="#1f7a4d" stroke-width="3"/>
+<text x="614" y="221" font-size="20" font-weight="700" fill="#1f7a4d">SSE-S3</text>
+<text x="614" y="245" font-size="15" fill="#444">기본값 · S3가 키 관리</text>
+<rect x="590" y="274" width="660" height="68" rx="12" fill="#fff" stroke="#7a3db8" stroke-width="3"/>
+<text x="614" y="305" font-size="20" font-weight="700" fill="#7a3db8">SSE-KMS</text>
+<text x="614" y="329" font-size="15" fill="#444">KMS가 키 관리 · 권한 분리·감사</text>
+<rect x="590" y="358" width="660" height="68" rx="12" fill="#fff" stroke="#7a3db8" stroke-width="3"/>
+<text x="614" y="389" font-size="20" font-weight="700" fill="#7a3db8">DSSE-KMS</text>
+<text x="614" y="413" font-size="15" fill="#444">KMS 키로 2계층 암호화</text>
+<rect x="590" y="442" width="660" height="68" rx="12" fill="#fff" stroke="#c0392b" stroke-width="3"/>
+<text x="614" y="473" font-size="20" font-weight="700" fill="#c0392b">SSE-C</text>
+<text x="614" y="497" font-size="15" fill="#444">고객이 요청마다 키 제공 · 2026.4부터 기본 차단</text>
+<text x="920" y="560" text-anchor="middle" font-size="15" fill="#2c5f44">같은 객체에 서로 다른 서버 사이드 방식을 동시에 적용할 수 없다</text>
+<rect x="1340" y="240" width="220" height="150" rx="14" fill="#f3eafb" stroke="#7a3db8" stroke-width="3"/>
+<text x="1450" y="300" text-anchor="middle" font-size="22" font-weight="700" fill="#7a3db8">AWS KMS</text>
+<text x="1450" y="332" text-anchor="middle" font-size="15" fill="#55307f">키 관리 서비스</text>
+<text x="1450" y="358" text-anchor="middle" font-size="15" fill="#55307f">(버킷과 같은 리전)</text>
+<path d="M1252,308 L1332,308" stroke="#7a3db8" stroke-width="4" stroke-dasharray="9 6" marker-end="url(#g)"/>
+<path d="M1252,392 C1300,392 1300,360 1332,360" stroke="#7a3db8" stroke-width="4" stroke-dasharray="9 6" fill="none" marker-end="url(#g)"/>
+<text x="1450" y="430" text-anchor="middle" font-size="14" fill="#666">kms:GenerateDataKey(업로드)</text>
+<text x="1450" y="452" text-anchor="middle" font-size="14" fill="#666">kms:Decrypt(다운로드)</text>
+<text x="800" y="640" text-anchor="middle" font-size="17" fill="#444">서버 사이드 암호화는 권한이 있는 정상 요청에는 복호화된 상태로 돌려준다. 이를 막으려면 클라이언트 사이드 암호화가 필요하다.</text>
+</svg>

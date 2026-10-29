@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" font-family="Noto Sans CJK KR, sans-serif"><rect width="1600" height="760" fill="#fff"/>
+<text x="800" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#222">S3 정적 웹 호스팅: 직접 접속 vs CloudFront를 앞에 둔 구성</text>
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#2f6fb5"/></marker><marker id="g" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#1f7a4d"/></marker><marker id="d" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#7a3db8"/></marker></defs>
+<rect x="40" y="80" width="1520" height="300" rx="16" fill="#fafafa" stroke="#cfcfcf" stroke-width="2"/>
+<text x="70" y="116" font-size="20" font-weight="700" fill="#333">① 웹사이트 엔드포인트 직접 사용 (HTTP만 지원)</text>
+<rect x="70" y="190" width="220" height="110" rx="14" fill="#f4f4f4" stroke="#9a9a9a" stroke-width="3"/>
+<text x="180.0" y="252.0" text-anchor="middle" font-size="21" font-weight="700" fill="#9a9a9a">브라우저</text>
+<rect x="560" y="130" width="300" height="80" rx="14" fill="#f3eafb" stroke="#7a3db8" stroke-width="3"/>
+<text x="710.0" y="169.0" text-anchor="middle" font-size="21" font-weight="700" fill="#7a3db8">Route 53</text>
+<text x="710.0" y="196.0" text-anchor="middle" font-size="15" fill="#444">A 레코드 별칭 (이름 = 버킷 이름)</text>
+<rect x="1000" y="160" width="520" height="190" rx="14" fill="#e8f7ef" stroke="#1f7a4d" stroke-width="3"/>
+<text x="1260" y="194" text-anchor="middle" font-size="21" font-weight="700" fill="#1f7a4d">S3 버킷</text>
+<text x="1260" y="220" text-anchor="middle" font-size="15" fill="#2c5f44">웹사이트 엔드포인트 · 공개 읽기 필요</text>
+<rect x="1025" y="294" width="150" height="38" rx="8" fill="#fff" stroke="#1f7a4d" stroke-width="2"/>
+<text x="1100" y="319" text-anchor="middle" font-size="15" fill="#1f7a4d">index.html</text>
+<rect x="1190" y="294" width="150" height="38" rx="8" fill="#fff" stroke="#1f7a4d" stroke-width="2"/>
+<text x="1265" y="319" text-anchor="middle" font-size="15" fill="#1f7a4d">error.html</text>
+<rect x="1355" y="294" width="150" height="38" rx="8" fill="#fff" stroke="#1f7a4d" stroke-width="2"/>
+<text x="1430" y="319" text-anchor="middle" font-size="15" fill="#1f7a4d">이미지·CSS·JS</text>
+<line x1="290" y1="215" x2="552" y2="175" stroke="#7a3db8" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#d)"/>
+<text x="400" y="178" text-anchor="middle" font-size="15" fill="#7a3db8">DNS 조회</text>
+<line x1="298" y1="268" x2="990" y2="268" stroke="#2f6fb5" stroke-width="5" marker-end="url(#a)"/>
+<text x="640" y="256" text-anchor="middle" font-size="18" font-weight="700" fill="#2f6fb5">HTTP · GET / HEAD</text>
+<text x="640" y="304" text-anchor="middle" font-size="15" fill="#666">HTTPS 불가</text>
+<rect x="40" y="410" width="1520" height="320" rx="16" fill="#fafafa" stroke="#cfcfcf" stroke-width="2"/>
+<text x="70" y="446" font-size="20" font-weight="700" fill="#333">② HTTPS가 필요하면 CloudFront를 앞에 둔다</text>
+<rect x="70" y="540" width="220" height="110" rx="14" fill="#f4f4f4" stroke="#9a9a9a" stroke-width="3"/>
+<text x="180.0" y="602.0" text-anchor="middle" font-size="21" font-weight="700" fill="#9a9a9a">브라우저</text>
+<rect x="560" y="530" width="300" height="130" rx="14" fill="#fdf0e6" stroke="#d9772b" stroke-width="3"/>
+<text x="710.0" y="594.0" text-anchor="middle" font-size="21" font-weight="700" fill="#d9772b">CloudFront</text>
+<text x="710.0" y="621.0" text-anchor="middle" font-size="15" fill="#444">HTTPS 종단 · 엣지 캐싱</text>
+<rect x="1000" y="500" width="520" height="190" rx="14" fill="#e8f7ef" stroke="#1f7a4d" stroke-width="3"/>
+<text x="1260" y="534" text-anchor="middle" font-size="21" font-weight="700" fill="#1f7a4d">S3 버킷</text>
+<text x="1260" y="560" text-anchor="middle" font-size="15" fill="#2c5f44">OAC로 비공개 유지 가능</text>
+<rect x="1025" y="634" width="150" height="38" rx="8" fill="#fff" stroke="#1f7a4d" stroke-width="2"/>
+<text x="1100" y="659" text-anchor="middle" font-size="15" fill="#1f7a4d">index.html</text>
+<rect x="1190" y="634" width="150" height="38" rx="8" fill="#fff" stroke="#1f7a4d" stroke-width="2"/>
+<text x="1265" y="659" text-anchor="middle" font-size="15" fill="#1f7a4d">error.html</text>
+<rect x="1355" y="634" width="150" height="38" rx="8" fill="#fff" stroke="#1f7a4d" stroke-width="2"/>
+<text x="1430" y="659" text-anchor="middle" font-size="15" fill="#1f7a4d">이미지·CSS·JS</text>
+<line x1="298" y1="595" x2="552" y2="595" stroke="#1f7a4d" stroke-width="5" marker-end="url(#g)"/>
+<text x="425" y="578" text-anchor="middle" font-size="18" font-weight="700" fill="#1f7a4d">HTTPS</text>
+<line x1="868" y1="595" x2="990" y2="595" stroke="#2f6fb5" stroke-width="5" marker-end="url(#a)"/>
+<text x="425" y="700" text-anchor="middle" font-size="15" fill="#7a3db8">Route 53 레코드는 CloudFront를 가리킨다</text>
+</svg>

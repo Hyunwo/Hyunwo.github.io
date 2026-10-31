@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" font-family="Noto Sans CJK KR, sans-serif"><rect width="1600" height="800" fill="#fff"/>
+<text x="800" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#222">S3 기타 기능 한눈에 보기</text>
+<defs><marker id="b" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#2f6fb5"/></marker><marker id="p" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#7a3db8"/></marker><marker id="o" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#d9772b"/></marker><marker id="g" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#1f7a4d"/></marker><marker id="r" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#c0392b"/></marker></defs>
+<rect x="600" y="260" width="400" height="200" rx="18" fill="#e8f7ef" stroke="#1f7a4d" stroke-width="4"/>
+<text x="800" y="340" text-anchor="middle" font-size="30" font-weight="700" fill="#1f7a4d">S3 소스 버킷</text>
+<text x="800" y="378" text-anchor="middle" font-size="16" fill="#2c5f44">저장 비용은 항상 버킷 소유자 부담</text>
+<rect x="60" y="90" width="380" height="110" rx="14" fill="#f3eafb" stroke="#7a3db8" stroke-width="3"/>
+<text x="250.0" y="143.0" text-anchor="middle" font-size="20" font-weight="700" fill="#7a3db8">서버 액세스 로깅</text>
+<text x="250.0" y="169.0" text-anchor="middle" font-size="15" fill="#444">로그 버킷 (같은 리전·계정, SSE-S3)</text>
+<line x1="620" y1="262" x2="440" y2="172" stroke="#7a3db8" stroke-width="4" marker-end="url(#p)"/>
+<text x="450" y="255" text-anchor="middle" font-size="16" font-weight="700" fill="#7a3db8">요청 기록 (최선 노력)</text>
+<rect x="60" y="520" width="380" height="110" rx="14" fill="#fdf0e6" stroke="#d9772b" stroke-width="3"/>
+<text x="250.0" y="573.0" text-anchor="middle" font-size="20" font-weight="700" fill="#d9772b">Transfer Acceleration</text>
+<text x="250.0" y="599.0" text-anchor="middle" font-size="15" fill="#444">가까운 엣지 → AWS 네트워크 → S3</text>
+<line x1="440" y1="540" x2="640" y2="462" stroke="#d9772b" stroke-width="4" marker-end="url(#o)"/>
+<text x="330" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#d9772b">s3-accelerate 엔드포인트</text>
+<rect x="1160" y="90" width="380" height="110" rx="14" fill="#e9f1fb" stroke="#2f6fb5" stroke-width="3"/>
+<text x="1350.0" y="143.0" text-anchor="middle" font-size="20" font-weight="700" fill="#2f6fb5">이벤트 알림</text>
+<text x="1350.0" y="169.0" text-anchor="middle" font-size="15" fill="#444">Lambda · SNS · SQS · EventBridge</text>
+<line x1="960" y1="262" x2="1160" y2="170" stroke="#2f6fb5" stroke-width="4" marker-end="url(#b)"/>
+<text x="1100" y="262" text-anchor="middle" font-size="16" font-weight="700" fill="#2f6fb5">객체 생성·삭제 등</text>
+<rect x="1160" y="520" width="380" height="110" rx="14" fill="#e8f7ef" stroke="#1f7a4d" stroke-width="3"/>
+<text x="1350.0" y="573.0" text-anchor="middle" font-size="20" font-weight="700" fill="#1f7a4d">복제 (CRR / SRR)</text>
+<text x="1350.0" y="599.0" text-anchor="middle" font-size="15" fill="#444">다른 리전·계정 버킷 · 버저닝 필수</text>
+<line x1="960" y1="458" x2="1160" y2="545" stroke="#1f7a4d" stroke-width="4" marker-end="url(#g)"/>
+<text x="1150" y="490" text-anchor="middle" font-size="16" font-weight="700" fill="#1f7a4d">비동기 복사</text>
+<rect x="560" y="610" width="480" height="110" rx="14" fill="#fdecec" stroke="#c0392b" stroke-width="3"/>
+<text x="800.0" y="663.0" text-anchor="middle" font-size="20" font-weight="700" fill="#c0392b">Requester Pays</text>
+<text x="800.0" y="689.0" text-anchor="middle" font-size="15" fill="#444">요청·전송 비용은 요청자 부담 · 인증 필수</text>
+<line x1="800" y1="606" x2="800" y2="466" stroke="#c0392b" stroke-width="4" marker-end="url(#r)"/>
+<text x="930" y="540" text-anchor="middle" font-size="16" font-weight="700" fill="#c0392b">요청자가 요청·전송 비용 지불</text>
+</svg>
